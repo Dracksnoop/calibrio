@@ -1193,6 +1193,165 @@ div[id*="chatway"]:not([style*="height: 100%"]):not([class*="expanded"]):hover {
 }
 
 /* ==========================================================================
+   Albums — a card per story. Hover (or keyboard focus) raises the caption,
+   a click opens the album with every photograph at its own proportions.
+   ========================================================================== */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.album-card {
+  -webkit-appearance: none; appearance: none;
+  display: block; position: relative; width: 100%;
+  margin: 0; padding: 0; border: 0;
+  font: inherit; color: inherit; text-align: left;
+  background: var(--ink);
+  border-radius: 8px; overflow: hidden;
+  box-shadow: 0 6px 20px rgba(44, 31, 24, 0.12);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.album-card img {
+  display: block; width: 100%; height: auto;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.album-card-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 22px;
+  background: linear-gradient(to top, rgba(24, 13, 8, 0.92) 0%, rgba(24, 13, 8, 0.45) 50%, rgba(24, 13, 8, 0) 100%);
+  color: #F1EADC;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.album-card-overlay > * {
+  display: block;
+  transform: translateY(12px);
+  transition: transform 0.5s var(--ease-cinematic);
+}
+.album-tag {
+  font-family: 'Montserrat', sans-serif; font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #E2AC69;
+  margin-bottom: 6px;
+}
+.album-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px; font-weight: 500; line-height: 1.15;
+  color: #F7EFE0;
+  margin-bottom: 6px;
+}
+.album-place {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 15px; line-height: 1.35;
+  color: rgba(241, 234, 220, 0.82);
+}
+.album-card:hover img,
+.album-card:focus-visible img { transform: scale(1.06); }
+.album-card:hover .album-card-overlay,
+.album-card:focus-visible .album-card-overlay { opacity: 1; }
+.album-card:hover .album-card-overlay > *,
+.album-card:focus-visible .album-card-overlay > * { transform: none; }
+.album-card:focus-visible { outline: 2px solid var(--carmine); outline-offset: 4px; }
+/* Touch screens have no hover: keep the caption on the card, with the scrim only behind it */
+@media (hover: none) {
+  .album-card-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(24, 13, 8, 0.9) 0%, rgba(24, 13, 8, 0.45) 28%, rgba(24, 13, 8, 0) 56%);
+  }
+  .album-card-overlay > * { transform: none; }
+}
+@media (max-width: 900px) {
+  .album-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+}
+@media (max-width: 600px) {
+  .album-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* The opened album */
+.album-modal {
+  position: fixed; inset: 0; z-index: 99998;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px; box-sizing: border-box;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+}
+.album-modal.is-open { opacity: 1; visibility: visible; transition: opacity 0.35s ease, visibility 0s; }
+.album-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(16, 10, 6, 0.92);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.album-modal-panel {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1060px;
+  max-height: 90vh; max-height: 90dvh;
+  display: flex; flex-direction: column; overflow: hidden;
+  background: #24140E;
+  border: 1px solid rgba(226, 172, 105, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.album-modal.is-open .album-modal-panel { transform: none; }
+.album-modal-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(226, 172, 105, 0.2);
+  background: rgba(36, 20, 14, 0.95);
+}
+.album-modal-tag {
+  font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #E2AC69;
+  margin-bottom: 4px;
+}
+.album-modal-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 3.2vw, 34px); font-weight: 500; line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: #F7EFE0;
+  margin: 0;
+}
+.album-modal-close {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 0; border-radius: 50%;
+  color: rgba(241, 234, 220, 0.75);
+  font-size: 32px; line-height: 1;
+  cursor: pointer; padding: 0;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.album-modal-close:hover, .album-modal-close:focus-visible { color: #E2AC69; background: rgba(226, 172, 105, 0.1); outline: none; }
+.album-modal-body {
+  flex: 1; overflow-y: auto;
+  padding: 28px;
+  overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+}
+.album-modal .masonry { column-count: 3; column-gap: 16px; }
+.album-modal .masonry-item {
+  background: rgba(241, 234, 220, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+.album-modal .masonry-item:focus-visible { outline-color: #E2AC69; }
+@media (max-width: 900px) {
+  .album-modal .masonry { column-count: 2; column-gap: 12px; }
+}
+@media (max-width: 768px) {
+  .album-modal { padding: 10px; }
+  .album-modal-panel { max-height: 94vh; max-height: 94dvh; border-radius: 12px; }
+  .album-modal-header { padding: 14px 12px 14px 18px; }
+  .album-modal-body { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .album-card img, .album-card-overlay, .album-card-overlay > *, .album-modal, .album-modal-panel { transition: none; }
+}
+
+/* ==========================================================================
    Lightbox — the full photograph, uncropped, with prev / next
    ========================================================================== */
 .lightbox {
