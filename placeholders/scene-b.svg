@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gb-bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#5a6a4a"></stop>
+      <stop offset="50%" stop-color="#3a4a32"></stop>
+      <stop offset="100%" stop-color="#1e2818"></stop>
+    </linearGradient>
+    <radialGradient id="gb-light" cx="0.65" cy="0.3" r="0.55">
+      <stop offset="0%" stop-color="#fff5e0" stop-opacity="0.6"></stop>
+      <stop offset="100%" stop-color="#fff5e0" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="gb-blur"><feGaussianBlur stdDeviation="6"></feGaussianBlur></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#gb-bg)"></rect>
+  
+  <g filter="url(#gb-blur)" opacity="0.75">
+    <ellipse cx="100" cy="600" rx="180" ry="120" fill="#2a3520"></ellipse>
+    <ellipse cx="500" cy="200" rx="160" ry="140" fill="#4a5a3a"></ellipse>
+    <ellipse cx="120" cy="100" rx="140" ry="110" fill="#6a7a5a"></ellipse>
+  </g>
+  <rect width="600" height="800" fill="url(#gb-light)"></rect>
+  
+  <g transform="translate(380 0)">
+    <path d="M 0 200 Q -40 350 -20 550 Q 10 720 60 800 L 220 800 L 220 100 Q 180 80 100 110 Q 30 140 0 200 Z" fill="#f0e4d2" opacity="0.92"></path>
+    
+    <path d="M 30 250 Q 20 400 40 600 Q 60 720 80 800" stroke="#c8b89c" stroke-width="40" fill="none" opacity="0.4" filter="url(#gb-blur)"></path>
+    <path d="M 130 200 Q 120 380 140 600 Q 160 720 180 800" stroke="#d8c8b0" stroke-width="50" fill="none" opacity="0.3" filter="url(#gb-blur)"></path>
+  </g>
+</svg>

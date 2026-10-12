@@ -1,0 +1,4200 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NYC Wedding Photographer | Thyzfoto</title>
+  <meta name="description"
+    content="Editorial documentary wedding photographer based in New York City, available worldwide. Quiet, cinematic, kept-in-light photographs of weddings across NYC, Brooklyn, Long Island, New Jersey, and the Hudson Valley.">
+  <link rel="canonical" href="http://flow.colibrisocialclub.com/">
+  <meta name="theme-color" content="#F1EADC">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="NYC Wedding Photographer | Thyzfoto">
+  <meta property="og:description"
+    content="Editorial documentary wedding photographer based in New York City, available worldwide. Quiet, cinematic, kept-in-light photographs.">
+  <meta property="og:url" content="http://flow.colibrisocialclub.com/">
+  <meta property="og:site_name" content="Thyzfoto">
+  <meta property="og:image" content="http://flow.colibrisocialclub.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NYC Wedding Photographer | Thyzfoto">
+  <meta name="twitter:description"
+    content="Editorial documentary wedding photographer based in New York City, available worldwide.">
+  <meta name="twitter:image" content="http://flow.colibrisocialclub.com/og-image.jpg">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="_shared.css?v=hostinger_v104">
+  <script>document.documentElement.classList.add('js-anim');</script>
+
+  <style>
+    :root {
+      --paper-1: #F4ECDA;
+      --paper-2: #EFE5CC;
+      --desk: #1c100a;
+      --gold-glow: rgba(226, 172, 105, 0.45);
+      --gold-accent: #E2AC69;
+    }
+
+    /* ================= Responsive Hero Banner Overhaul ================= */
+    .hero {
+      position: relative;
+      height: 100vh;
+      height: 100dvh;
+      min-height: 680px;
+      margin-top: 0 !important;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image img,
+    .hero-image video,
+    .hero-banner-img,
+    .hero-banner-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: object-position 0.3s ease;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(20, 13, 8, 0.92) 0%, rgba(20, 13, 8, 0.50) 42%, rgba(20, 13, 8, 0.12) 70%, transparent 100%),
+        linear-gradient(to right, rgba(20, 13, 8, 0.70) 0%, rgba(20, 13, 8, 0.25) 55%, transparent 100%),
+        linear-gradient(to bottom, rgba(20, 13, 8, 0.60) 0%, transparent 22%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 110px 48px 84px 48px;
+      max-width: 1480px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+
+    .hero-content>* {
+      pointer-events: auto;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .hero-eyebrow .lbl {
+      font-family: var(--font-sans);
+      color: rgba(241, 234, 220, 0.82);
+      letter-spacing: 0.26em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow .lbl strong {
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      color: var(--cream);
+    }
+
+    .hero h1.display {
+      font-family: var(--font-serif);
+      color: var(--cream);
+      font-size: clamp(30px, 4.2vw, 56px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1.display em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .hero h1.display strong {
+      font-family: var(--font-serif);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .hero-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 36px;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-foot p {
+      color: rgba(241, 234, 220, 0.92);
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 480px;
+      margin: 0;
+      text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Tablet breakpoint (<= 1024px) */
+    @media (max-width: 1024px) {
+
+      .hero-image img,
+      .hero-image video,
+      .hero-banner-img,
+      .hero-banner-video {
+        object-position: 52% 16%;
+      }
+
+      .hero-content {
+        padding: 100px 32px 64px;
+      }
+
+      .hero h1.display {
+        font-size: clamp(26px, 4.4vw, 44px);
+      }
+    }
+
+    /* Mobile breakpoint (<= 768px) */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: auto;
+        padding: 0;
+      }
+
+      .hero-image img,
+      .hero-image video,
+      .hero-banner-img,
+      .hero-banner-video {
+        object-position: 54% 10%;
+      }
+
+      .hero-image::after {
+        background:
+          linear-gradient(to top, rgba(16, 10, 6, 0.95) 0%, rgba(16, 10, 6, 0.72) 48%, rgba(16, 10, 6, 0.35) 75%, rgba(16, 10, 6, 0.55) 100%);
+      }
+
+      .hero-content {
+        padding: 96px 24px 44px;
+        justify-content: flex-end;
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 12px;
+      }
+
+      .hero-eyebrow .lbl {
+        font-size: 9.5px;
+        letter-spacing: 0.18em;
+      }
+
+      .hero h1.display {
+        font-size: clamp(24px, 6.2vw, 36px) !important;
+        line-height: 1.08;
+      }
+
+      .hero-foot {
+        margin-top: 20px;
+        gap: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-foot p {
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 100%;
+        color: rgba(241, 234, 220, 0.92);
+      }
+
+      .hero-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 22px;
+        font-size: 11px;
+        box-sizing: border-box;
+      }
+    }
+
+    /* Small mobile screens (<= 480px) */
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 86px 20px 36px;
+      }
+
+      .hero h1.display {
+        font-size: clamp(21px, 5.8vw, 29px) !important;
+      }
+
+      .hero-foot p {
+        font-size: 14px;
+        line-height: 1.48;
+      }
+
+      .hero-actions .btn {
+        padding: 14px 20px;
+        font-size: 10.5px;
+      }
+    }
+
+    /* Seamless transitions between sections */
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 140px;
+      background: linear-gradient(to bottom, transparent, #180c06);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    /* ================= Pinned 3D Letter "Scroller" & A4 Paper Ratio ================= */
+    .letter-pinned-container {
+      position: relative;
+      height: 220vh;
+      background: #180c06;
+    }
+
+    .letter-sticky-viewport {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(1300px 700px at 50% 50%, rgba(110, 48, 20, 0.45), transparent 75%),
+        radial-gradient(800px 450px at 50% 25%, rgba(180, 85, 35, 0.22), transparent 70%),
+        var(--desk);
+      isolation: isolate;
+    }
+
+    .letter-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1400px;
+    }
+
+    /* Standard A4 Paper Sheet Ratio (1 : 1.414) - Prominent, Crisp Web Presence */
+    .letter-paper {
+      position: relative;
+      z-index: 3;
+      width: min(520px, 88vw);
+      aspect-ratio: 1 / 1.414;
+      max-height: 735px;
+      margin: 0 auto;
+      background: linear-gradient(175deg, #FBF6EC 0%, #F5ECDA 55%, #EFE3C8 100%);
+      color: var(--ink);
+      padding: 34px 38px 28px;
+      box-shadow:
+        0 45px 100px -20px rgba(0, 0, 0, 0.85),
+        0 20px 45px -12px rgba(0, 0, 0, 0.55),
+        0 0 60px -10px rgba(226, 172, 105, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(230, 190, 140, 0.28);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      will-change: transform, opacity;
+      transform-origin: center center;
+    }
+
+    .letter-paper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(91deg, rgba(60, 38, 22, 0.025) 0 2px, transparent 2px 5px),
+        repeating-linear-gradient(2deg, rgba(60, 38, 22, 0.018) 0 1px, transparent 1px 3px);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .letter-paper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(140% 70% at 50% 0%, transparent 60%, rgba(60, 38, 22, 0.12) 100%);
+      pointer-events: none;
+    }
+
+    .letter-paper .bg-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .letter-paper .bg-photo image-slot,
+    .letter-paper .bg-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      opacity: 0.14;
+      mix-blend-mode: multiply;
+      filter: sepia(35%) saturate(85%) contrast(95%);
+    }
+
+    .letter-paper>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter-paper>.bg-photo {
+      z-index: 0;
+    }
+
+    .letter-paper .head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(60, 38, 22, 0.16);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: clamp(48px, 6vw, 68px);
+      width: auto;
+      max-height: 75px;
+      object-fit: contain;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .letter-paper .head .logo-wrap {
+      display: block;
+      line-height: 0;
+    }
+
+    .letter-paper .head .logo-img {
+      display: block;
+      height: clamp(46px, 5.5vw, 64px);
+      width: auto;
+      max-width: 88%;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(18%) sepia(64%) saturate(2156%) hue-rotate(355deg) brightness(95%) contrast(92%);
+    }
+
+    .letter-paper .head .sub {
+      margin-top: 6px;
+      font-family: var(--font-sans);
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--carmine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .letter-paper .head .sub .yr {
+      font-family: var(--font-mono);
+      font-size: 7.5px;
+      opacity: 0.6;
+    }
+
+    .letter-paper .head .sub .r {
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.4;
+    }
+
+    .letter-paper .head .tag {
+      margin-top: 4px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 11.5px;
+      color: var(--carmine);
+    }
+
+    .letter-paper .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 14px;
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      letter-spacing: 0.14em;
+      color: var(--smoke);
+      text-transform: uppercase;
+    }
+
+    .letter-paper .meta-row .chapter {
+      color: var(--carmine);
+    }
+
+    .letter-paper .salutation {
+      margin-top: 14px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 21px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .letter-paper .body {
+      margin-top: 10px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .letter-paper .body p {
+      margin: 0 0 10px;
+    }
+
+    .letter-paper .body p:first-of-type::first-letter {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--carmine);
+      float: left;
+      font-size: 48px;
+      line-height: 0.8;
+      padding: 4px 8px 0 0;
+      margin: 0;
+    }
+
+    .letter-paper .body em {
+      color: var(--carmine);
+      font-style: italic;
+    }
+
+    .letter-paper .signoff {
+      margin-top: 14px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .letter-paper .signature {
+      margin-top: 2px;
+      font-family: 'Cormorant Garamond', cursive;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--carmine);
+      transform: rotate(-2deg);
+      display: inline-block;
+      letter-spacing: -0.01em;
+    }
+
+    .letter-paper .signature::after {
+      content: '';
+      display: block;
+      width: 90px;
+      height: 1.2px;
+      margin-top: 2px;
+      background: var(--carmine);
+      opacity: 0.45;
+      transform: rotate(-1.5deg) translateX(6px);
+      border-radius: 2px;
+    }
+
+    .letter-paper .stamp {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 66px;
+      height: 86px;
+      background: #E8D9B6;
+      border: 1px dashed rgba(60, 38, 22, 0.4);
+      padding: 4px;
+      transform: rotate(2.5deg);
+      box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.18);
+    }
+
+    .letter-paper .stamp::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background:
+        radial-gradient(circle 2px at 50% 0%, transparent 1.5px, transparent 2px),
+        radial-gradient(circle 2px at 50% 100%, transparent 1.5px, transparent 2px);
+      pointer-events: none;
+    }
+
+    .letter-paper .stamp .pm {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(60, 38, 22, 0.55);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 2px;
+      font-family: var(--font-mono);
+      font-size: 6.5px;
+      text-align: center;
+      color: var(--carmine);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .letter-paper .stamp .pm-img {
+      width: 100%;
+      height: 58%;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .letter-paper .stamp .pm-img image-slot,
+    .letter-paper .stamp .pm-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .letter-paper .stamp .pm-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(124, 42, 26, 0.25), rgba(60, 15, 8, 0.35));
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .letter-paper .stamp .pm-cap {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 8.5px;
+      color: var(--ink);
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .letter-paper .stamp .pm-foot {
+      font-size: 5.5px;
+      opacity: 0.75;
+    }
+
+    /* Wax seal */
+    .letter-paper .seal {
+      margin: 16px auto 0;
+      position: relative;
+      width: 118px;
+      height: 118px;
+      display: block;
+      clear: both;
+      filter: drop-shadow(0 12px 18px rgba(60, 15, 5, 0.48)) drop-shadow(0 4px 6px rgba(60, 15, 5, 0.35));
+      transition: transform 0.4s var(--ease-cinematic);
+    }
+
+    .letter-paper .seal:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    .letter-paper .seal .seal-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      filter: contrast(105%) saturate(105%);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Side Mementos (Flanking the 500px A4 Paper) */
+    .memento-side {
+      position: absolute;
+      z-index: 4;
+      box-shadow: 0 18px 30px -10px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      will-change: transform, opacity, filter, box-shadow;
+      cursor: pointer;
+      pointer-events: auto !important;
+      transition: box-shadow 0.35s ease, filter 0.35s ease;
+    }
+
+    .memento-side image-slot,
+    .memento-side img,
+    .approach-photo-frame image-slot,
+    .approach-photo-frame img {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+    }
+
+    /* Keepsake photos keep their own proportions: each frame's height follows its photograph */
+    .memento-side {
+      height: auto !important;
+    }
+
+    .memento-side img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .memento-side:hover image-slot,
+    .memento-side:hover img,
+    .approach-photo-frame:hover image-slot,
+    .approach-photo-frame:hover img {
+      transform: scale(1.06);
+      filter: brightness(1.08) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.45));
+    }
+
+    /* 1. Pressed botanical sprig (Upper Left) */
+    .memento-side.sprig {
+      left: calc(50% - 250px - 135px);
+      top: 40px;
+      width: 110px;
+      height: 175px;
+      box-shadow: none;
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.38));
+      mix-blend-mode: multiply;
+    }
+
+    /* 2. Film print with tape (Lower Left) */
+    .memento-side.film-print {
+      left: calc(50% - 250px - 175px);
+      top: 360px;
+      width: 155px;
+      height: 205px;
+      background: var(--ink);
+      padding: 0;
+    }
+
+    .memento-side .tape {
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      transform: translateX(-50%) rotate(-3deg);
+      width: 74px;
+      height: 19px;
+      background: linear-gradient(180deg, rgba(225, 208, 165, 0.65), rgba(215, 195, 145, 0.78));
+      border-left: 1px dashed rgba(120, 90, 40, 0.22);
+      border-right: 1px dashed rgba(120, 90, 40, 0.22);
+      mix-blend-mode: multiply;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 3. Polaroid portrait (Upper Right) */
+    .memento-side.polaroid {
+      left: calc(50% + 250px + 18px);
+      top: 110px;
+      width: 155px;
+      height: 195px;
+      background: #FDFAF0;
+      padding: 8px;
+    }
+
+    .memento-side.polaroid .lbl {
+      display: none !important;
+    }
+
+    /* 4. Postcard landscape with clip (Lower Right) */
+    .memento-side.postcard {
+      left: calc(50% + 250px + 18px);
+      top: 420px;
+      width: 175px;
+      height: 130px;
+      background: #ECE2C8;
+      padding: 0;
+    }
+
+    .memento-side .clip {
+      position: absolute;
+      left: -7px;
+      top: 16px;
+      width: 20px;
+      height: 48px;
+      border: 2px solid #6F6051;
+      border-right: none;
+      border-radius: 7px 0 0 7px;
+      background: linear-gradient(90deg, transparent 40%, rgba(0, 0, 0, 0.06) 70%);
+      transform: rotate(-6deg);
+    }
+
+
+    /* ================= Quote Section ("FROM A CLIENT LETTER") Cursor Trail Effect (Behind Text) ================= */
+    .quote-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section .container.narrow {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Soft protective luminous halo so quote text stays 100% visible when photos pass behind */
+    .quote-section .quote-body,
+    .quote-section blockquote,
+    .quote-section .eyebrow-row,
+    .quote-section .quote-attr,
+    .quote-section .quote-attr span {
+      text-shadow:
+        0 0 18px rgba(250, 247, 240, 0.98),
+        0 0 8px rgba(250, 247, 240, 0.95),
+        0 1px 3px rgba(250, 247, 240, 0.85);
+    }
+
+    .quote-trail-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .quote-trail-item {
+      position: absolute;
+      width: clamp(72px, 5.6vw, 98px);
+      border-radius: 7px;
+      background: #ffffff;
+      padding: 3px;
+      box-sizing: border-box;
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.28),
+        0 4px 14px rgba(0, 0, 0, 0.18),
+        0 0 0 1px rgba(200, 155, 95, 0.45);
+      pointer-events: none;
+      transform-origin: center center;
+      will-change: transform, opacity;
+      animation: quoteTrailPop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Vignette and shadow overlay on the quote trail images */
+    .quote-trail-item::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 4.5px;
+      pointer-events: none;
+      box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.58), inset 0 0 6px rgba(0, 0, 0, 0.38);
+      background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.32) 100%);
+    }
+
+    .quote-trail-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4.5px;
+      pointer-events: none;
+    }
+
+    @keyframes quoteTrailPop {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.35) rotate(var(--trail-rot, 0deg));
+      }
+
+      15% {
+        opacity: 0.86;
+        transform: translate(-50%, -50%) scale(1) rotate(var(--trail-rot, 0deg));
+      }
+
+      65% {
+        opacity: 0.76;
+        transform: translate(-50%, calc(-50% - 6px)) scale(0.96) rotate(var(--trail-rot, 0deg));
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 18px)) scale(0.80) rotate(var(--trail-rot, 0deg));
+      }
+    }
+
+    /* ================= CTA Section ("When the day is yours") Cursor Trail Effect (Behind Button) ================= */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section .container.narrow {
+      position: relative;
+      z-index: 5;
+    }
+
+    .cta-section .btn-primary {
+      position: relative;
+      z-index: 10;
+    }
+
+    .cta-trail-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .cta-trail-item {
+      position: absolute;
+      width: clamp(72px, 5.8vw, 100px);
+      border-radius: 7px;
+      background: #ffffff;
+      padding: 3.5px;
+      box-sizing: border-box;
+      box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.5),
+        0 2px 8px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(226, 172, 105, 0.5);
+      pointer-events: none;
+      transform-origin: center center;
+      will-change: transform, opacity;
+      animation: ctaTrailPop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .cta-trail-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4.5px;
+      pointer-events: none;
+    }
+
+    @keyframes ctaTrailPop {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.35) rotate(var(--trail-rot, 0deg));
+      }
+
+      15% {
+        opacity: 0.96;
+        transform: translate(-50%, -50%) scale(1) rotate(var(--trail-rot, 0deg));
+      }
+
+      65% {
+        opacity: 0.88;
+        transform: translate(-50%, calc(-50% - 6px)) scale(0.96) rotate(var(--trail-rot, 0deg));
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 18px)) scale(0.80) rotate(var(--trail-rot, 0deg));
+      }
+    }
+
+    @media (max-width: 1260px) {
+      .memento-side.sprig {
+        left: calc(50% - 250px - 105px);
+        transform: scale(0.85);
+      }
+
+      .memento-side.film-print {
+        left: calc(50% - 250px - 145px);
+        transform: scale(0.85);
+      }
+
+      .memento-side.polaroid {
+        left: calc(50% + 250px + 8px);
+        transform: scale(0.85);
+      }
+
+      .memento-side.postcard {
+        left: calc(50% + 250px + 8px);
+        transform: scale(0.85);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .letter-paper {
+        width: min(420px, 82vw);
+        padding: 32px 22px 28px;
+      }
+
+      .memento-side.sprig {
+        left: calc(50% - 210px - 45px);
+        transform: scale(0.75);
+      }
+
+      .memento-side.film-print {
+        left: calc(50% - 210px - 55px);
+        transform: scale(0.75);
+      }
+
+      .memento-side.polaroid {
+        left: calc(50% + 210px - 15px);
+        transform: scale(0.75);
+      }
+
+      .memento-side.postcard {
+        left: calc(50% + 210px - 20px);
+        transform: scale(0.75);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .letter-pinned-container {
+        height: 280vh;
+      }
+
+      .letter-section {
+        padding: 60px 0 90px;
+      }
+
+      .letter-paper {
+        width: min(310px, 75vw);
+        padding: 26px 16px 32px;
+        box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65);
+      }
+
+      .letter-paper .head .logo-img {
+        height: 48px;
+      }
+
+      .letter-paper .head .name {
+        font-size: 25px;
+      }
+
+      .letter-paper .salutation {
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
+
+      .letter-paper .body {
+        font-size: 13px;
+        line-height: 1.48;
+      }
+
+      .letter-paper .signature {
+        font-size: 25px;
+        margin: 10px 0 2px;
+      }
+
+      .letter-paper .stamp {
+        top: 8px;
+        right: 8px;
+        transform: rotate(3deg) scale(.58);
+        transform-origin: top right;
+      }
+
+      .letter-paper .seal {
+        width: 64px;
+        height: 64px;
+        margin-top: 2px;
+      }
+
+      /* Side Keepsake Images Flanking Letter in Phone Mode */
+      .memento-side {
+        display: block !important;
+        pointer-events: auto;
+      }
+
+      .memento-side.sprig {
+        left: calc(50% - 155px - 32px);
+        top: 10px;
+        width: 58px;
+        height: 90px;
+        z-index: 5;
+      }
+
+      .memento-side.film-print {
+        left: calc(50% - 155px - 42px);
+        top: 320px;
+        width: 78px;
+        height: 102px;
+        z-index: 5;
+      }
+
+      .memento-side.film-print .tape {
+        width: 42px;
+        height: 11px;
+        top: -5px;
+      }
+
+      .memento-side.polaroid {
+        left: calc(50% + 155px - 28px);
+        top: 10px;
+        width: 80px;
+        height: 98px;
+        padding: 4px 4px 16px;
+        z-index: 5;
+      }
+
+      .memento-side.polaroid image-slot {
+        height: 72px !important;
+      }
+
+      .memento-side.polaroid .lbl {
+        font-size: 7.5px;
+        bottom: 2px;
+      }
+
+      .memento-side.postcard {
+        left: calc(50% + 155px - 32px);
+        top: 330px;
+        width: 86px;
+        height: 64px;
+        z-index: 5;
+      }
+
+      .memento-side.postcard .clip {
+        width: 12px;
+        height: 28px;
+        top: 6px;
+        left: -4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .letter-paper,
+      .memento-side {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ================= Reviews Section: Letter Page Change Design ================= */
+    .reviews-pinned-container {
+      position: relative;
+      height: 300vh;
+      background: #140904;
+    }
+
+    .reviews-exit-blend {
+      display: none;
+    }
+
+    .reviews-sticky-viewport {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      background:
+        radial-gradient(1100px 650px at 50% 50%, rgba(125, 52, 22, 0.48), transparent 75%),
+        radial-gradient(800px 450px at 50% 25%, rgba(200, 110, 45, 0.24), transparent 70%),
+        #150a05;
+      isolation: isolate;
+      padding: clamp(16px, 2.5vh, 28px) 24px;
+    }
+
+    /* Ambient central gold/amber glow */
+    .reviews-aura {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 900px;
+      height: 560px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse at center, rgba(226, 172, 105, 0.28) 0%, rgba(142, 58, 24, 0.18) 50%, transparent 75%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .reviews-head {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto clamp(12px, 1.8vh, 20px);
+      padding: 0 16px;
+    }
+
+    .reviews-head .eyebrow-row {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .reviews-head .eyebrow.lbl {
+      color: var(--cream);
+      opacity: 0.88;
+    }
+
+    .reviews-head .dot {
+      background: var(--gold-accent);
+    }
+
+    .reviews-head h2 {
+      font-family: var(--font-display);
+      color: var(--cream);
+      font-size: clamp(34px, 4.5vw, 58px);
+      line-height: 1.08;
+      margin: 0;
+      text-transform: lowercase;
+      font-weight: 400;
+    }
+
+    .reviews-head .gold-script {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--gold-accent);
+      text-shadow: 0 0 24px rgba(226, 172, 105, 0.4);
+      display: inline-block;
+      text-transform: lowercase;
+    }
+
+    .reviews-head .lede {
+      margin-top: 8px;
+      color: rgba(241, 234, 220, 0.72);
+      font-size: clamp(14px, 1.8vw, 16px);
+      line-height: 1.6;
+    }
+
+    /* Letter Page 3D Stage */
+    .reviews-letter-stage {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 860px;
+      height: clamp(330px, 40vh, 370px);
+      perspective: 2000px;
+      margin: clamp(6px, 1.2vh, 14px) auto;
+      transform-style: preserve-3d;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Individual Letter Sheet Page */
+    .review-letter-page {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(650px, 88vw);
+      box-sizing: border-box;
+      will-change: transform, opacity;
+      user-select: none;
+      transform-origin: left center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .letter-sheet {
+      position: relative;
+      width: 100%;
+      min-height: clamp(310px, 38vh, 350px);
+      background: linear-gradient(172deg, #FCF8EE 0%, #F7EFE0 55%, #ECE2C8 100%);
+      color: var(--ink);
+      border-radius: 14px;
+      padding: clamp(22px, 2.8vh, 28px) clamp(26px, 3.5vw, 38px) clamp(16px, 2.2vh, 22px);
+      box-sizing: border-box;
+      border: 1px solid rgba(212, 175, 125, 0.5);
+      box-shadow:
+        0 35px 85px -18px rgba(0, 0, 0, 0.8),
+        0 14px 32px -8px rgba(0, 0, 0, 0.5),
+        0 0 50px -10px rgba(226, 172, 105, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85),
+        inset 0 0 35px rgba(180, 140, 90, 0.09);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Authentic Paper Fiber Texture Overlay */
+    .sheet-texture {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(91deg, rgba(60, 38, 22, 0.022) 0 2px, transparent 2px 5px),
+        repeating-linear-gradient(2deg, rgba(60, 38, 22, 0.016) 0 1px, transparent 1px 3px);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .sheet-texture::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(140% 80% at 50% 0%, transparent 65%, rgba(122, 37, 24, 0.06) 100%);
+      pointer-events: none;
+    }
+
+    .letter-sheet>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sheet Header with Dispatch Label and Vintage Postage Stamp */
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(122, 37, 24, 0.16);
+      margin-bottom: 18px;
+    }
+
+    .sheet-dispatch {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .sheet-badge {
+      font-family: var(--font-serif);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--carmine);
+      font-weight: 600;
+    }
+
+    .sheet-folio {
+      font-family: var(--font-serif);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(60, 38, 22, 0.65);
+    }
+
+    /* Vintage Postage Stamp with Serrated Perforated Edge */
+    .sheet-stamp {
+      width: 54px;
+      height: 68px;
+      background: #F4E8D0;
+      border: 1px dashed rgba(122, 37, 24, 0.5);
+      border-radius: 3px;
+      padding: 3px;
+      box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.18);
+      transform: rotate(2.5deg);
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+
+    .sheet-stamp .stamp-inner {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(122, 37, 24, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3px 2px;
+      box-sizing: border-box;
+      text-align: center;
+      color: var(--carmine);
+    }
+
+    .sheet-stamp .stamp-country {
+      font-family: var(--font-serif);
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .sheet-stamp .stamp-icon {
+      font-size: 11px;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    .sheet-stamp .stamp-val {
+      font-family: var(--font-serif);
+      font-size: 7.5px;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      line-height: 1;
+    }
+
+    .sheet-stamp .stamp-city {
+      font-family: var(--font-serif);
+      font-size: 7px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      line-height: 1;
+    }
+
+    /* Sheet Content */
+    .sheet-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sheet-salutation {
+      font-family: var(--font-display);
+      font-style: normal;
+      font-size: clamp(24px, 2.8vw, 32px);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-transform: lowercase;
+      color: #5C2D1F;
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sheet-salutation em,
+    .sheet-salutation strong {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 700;
+      color: #5C2D1F;
+    }
+
+    .sheet-salutation::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(122, 37, 24, 0.22);
+      max-width: 140px;
+    }
+
+    .sheet-quote {
+      margin: 0 0 18px;
+      font-family: var(--font-serif);
+      font-style: normal;
+      font-size: clamp(16px, 2.1vw, 20.5px);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.6;
+      color: #2C1F18;
+      text-transform: none;
+    }
+
+    .sheet-quote em {
+      font-style: italic;
+      color: var(--carmine);
+    }
+
+    /* Sheet Footer */
+    .sheet-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(122, 37, 24, 0.16);
+      margin-top: 10px;
+    }
+
+    .sheet-location {
+      font-family: var(--font-serif);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(60, 38, 22, 0.75);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sheet-location .pin-symbol {
+      color: var(--carmine);
+      font-size: 11px;
+    }
+
+    .sheet-signoff {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sheet-verified {
+      font-family: var(--font-serif);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--carmine);
+      opacity: 0.85;
+    }
+
+    .sheet-signoff .mini-seal {
+      width: 38px;
+      height: 38px;
+      filter: drop-shadow(0 4px 6px rgba(60, 15, 5, 0.35));
+      flex-shrink: 0;
+    }
+
+    .sheet-signoff .mini-seal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Page Turn Shadow Overlay (mimics depth and page curl shadow) */
+    .sheet-turn-shadow {
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      pointer-events: none;
+      opacity: 0;
+      background: linear-gradient(90deg, rgba(30, 10, 5, 0.35) 0%, rgba(30, 10, 5, 0.08) 35%, transparent 100%);
+      transition: opacity 0.15s ease;
+      z-index: 10;
+    }
+
+    /* Faux Deckle Edge Depth Stack Beneath Active Letter */
+    .reviews-letter-stage::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(650px, 88vw);
+      height: 380px;
+      background: #E8DCC2;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 125, 0.35);
+      transform: translate(-50%, -50%) translate3d(6px, 12px, -30px) rotate(1.2deg);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .reviews-letter-stage::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(650px, 88vw);
+      height: 380px;
+      background: #DFCFAF;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 125, 0.25);
+      transform: translate(-50%, -50%) translate3d(-8px, 20px, -60px) rotate(-1.5deg);
+      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Navigation & Page Flip Controller Bar */
+    .reviews-folio-nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 26px;
+      user-select: none;
+    }
+
+    .folio-btn {
+      background: rgba(35, 18, 10, 0.75);
+      border: 1px solid rgba(226, 172, 105, 0.35);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s var(--ease-cinematic);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .folio-btn:hover:not(:disabled) {
+      background: #3D1F14;
+      border-color: var(--gold-accent);
+      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .folio-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .folio-dots {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .folio-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(241, 234, 220, 0.25);
+      border: 1px solid rgba(226, 172, 105, 0.3);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      padding: 0;
+    }
+
+    .folio-dot:hover {
+      background: rgba(226, 172, 105, 0.6);
+    }
+
+    .folio-dot.is-active {
+      background: var(--gold-accent);
+      border-color: var(--gold-accent);
+      box-shadow: 0 0 10px var(--gold-accent);
+      transform: scale(1.3);
+    }
+
+    .folio-page-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(241, 234, 220, 0.85);
+    }
+
+    .folio-scroll-cue {
+      position: absolute;
+      bottom: -34px;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .folio-scroll-cue .cue-arrow {
+      animation: cueBounce 1.6s infinite ease-in-out;
+    }
+
+    @keyframes cueBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(4px);
+      }
+    }
+
+    /* Mobile View: Left-to-Right Scroll & Swipe Page Change */
+    @media (max-width: 820px) {
+      .reviews-pinned-container {
+        height: auto !important;
+        min-height: auto;
+      }
+
+      .reviews-sticky-viewport {
+        position: relative !important;
+        top: auto !important;
+        height: auto !important;
+        min-height: auto;
+        padding: 50px 14px 60px !important;
+        overflow: hidden;
+      }
+
+      .reviews-head {
+        margin: 0 auto 20px;
+        padding: 0 12px;
+      }
+
+      .reviews-head h2 {
+        font-size: 32px;
+      }
+
+      .reviews-head .lede {
+        display: none;
+      }
+
+      /* Mobile Horizontal Page Track */
+      .reviews-letter-stage {
+        height: auto !important;
+        perspective: none !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 16px;
+        padding: 12px 24px 24px !important;
+        scroll-padding: 0 24px !important;
+        box-sizing: border-box;
+        touch-action: pan-x pan-y;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .reviews-letter-stage::-webkit-scrollbar {
+        display: none;
+      }
+
+      .reviews-letter-stage::before,
+      .reviews-letter-stage::after {
+        display: none !important;
+      }
+
+      .review-letter-page {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        flex: 0 0 calc(100vw - 48px) !important;
+        width: calc(100vw - 48px) !important;
+        max-width: 350px !important;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        box-sizing: border-box;
+      }
+
+      .letter-sheet {
+        min-height: 380px;
+        padding: 24px 20px 20px;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+
+      .sheet-head {
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+      }
+
+      .sheet-badge {
+        font-family: var(--font-serif);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+      }
+
+      .sheet-folio {
+        font-family: var(--font-serif);
+        font-size: 9px;
+        letter-spacing: 0.12em;
+      }
+
+      .sheet-stamp {
+        width: 44px;
+        height: 56px;
+      }
+
+      .sheet-salutation {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 21px;
+        margin-bottom: 8px;
+      }
+
+      .sheet-quote {
+        font-family: var(--font-serif);
+        font-size: 15.5px;
+        line-height: 1.55;
+        margin-bottom: 14px;
+      }
+
+      .sheet-foot {
+        padding-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .sheet-location {
+        font-family: var(--font-serif);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+
+      .sheet-signoff {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .sheet-verified {
+        font-family: var(--font-serif);
+        font-size: 9px;
+        letter-spacing: 0.12em;
+      }
+
+      .sheet-signoff .mini-seal {
+        width: 30px;
+        height: 30px;
+      }
+
+      .reviews-folio-nav {
+        margin-top: 16px;
+        gap: 14px;
+      }
+
+      .folio-btn {
+        padding: 6px 12px;
+        font-size: 9px;
+      }
+
+      .folio-scroll-cue {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-letter-page {
+        transition: none !important;
+      }
+
+      .folio-scroll-cue .cue-arrow {
+        animation: none !important;
+      }
+    }
+
+    /* ================= 3D Curved Cylindrical Gallery (Award Winning Creators) ================= */
+    .curved-gallery-pinned {
+      position: relative;
+      height: 380vh;
+      background: #140904;
+    }
+
+    .curved-gallery-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      background:
+        radial-gradient(1300px 750px at 50% 42%, rgba(135, 58, 24, 0.45), transparent 75%),
+        radial-gradient(850px 480px at 50% 12%, rgba(210, 115, 48, 0.25), transparent 70%),
+        #140904;
+      isolation: isolate;
+    }
+
+    .curved-gallery-frame {
+      position: relative;
+      width: 100%;
+      max-width: 1540px;
+      height: min(880px, 94vh);
+      background: linear-gradient(170deg, rgba(28, 14, 8, 0.88) 0%, rgba(16, 8, 4, 0.94) 100%);
+      border: 1px solid rgba(226, 172, 105, 0.28);
+      border-radius: 36px;
+      box-shadow:
+        0 45px 110px -25px rgba(0, 0, 0, 0.92),
+        0 0 80px -15px rgba(226, 172, 105, 0.2),
+        inset 0 1px 0 rgba(255, 235, 205, 0.22);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 38px 24px 30px;
+      box-sizing: border-box;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* Ambient aura inside the frame */
+    .curved-gallery-frame::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(226, 172, 105, 0.16) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Header matching the reference image ("Today's Pick / AWARD WINNING CREATORS") */
+    .curved-gallery-header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 10;
+      max-width: 720px;
+    }
+
+    .curved-gallery-badge {
+      display: inline-block;
+      font-family: var(--font-mono, monospace);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: rgba(226, 172, 105, 0.12);
+      border: 1px solid rgba(226, 172, 105, 0.28);
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .curved-gallery-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(30px, 4.2vw, 54px);
+      letter-spacing: -0.015em;
+      line-height: 1.06;
+      text-transform: uppercase;
+      color: #FFF8EE;
+      margin: 0 0 12px;
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(226, 172, 105, 0.22);
+    }
+
+    .curved-gallery-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: rgba(241, 234, 220, 0.72);
+      margin: 0 0 20px;
+      max-width: 540px;
+    }
+
+    .curved-gallery-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .curved-gallery-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #E2AC69 0%, #C98A42 100%);
+      color: #180C06;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 11px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 8px 24px -4px rgba(226, 172, 105, 0.38);
+    }
+
+    .curved-gallery-btn:hover {
+      background: linear-gradient(135deg, #F3C488 0%, #DB9A50 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(226, 172, 105, 0.55);
+    }
+
+    .curved-gallery-counter {
+      font-family: var(--font-mono, monospace);
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFF8EE;
+      letter-spacing: 0.08em;
+      background: rgba(241, 234, 220, 0.08);
+      border: 1px solid rgba(226, 172, 105, 0.25);
+      padding: 7px 16px;
+      border-radius: 999px;
+    }
+
+    .curved-gallery-counter .dim {
+      color: rgba(241, 234, 220, 0.45);
+      font-weight: 400;
+    }
+
+    /* 3D Cylindrical Perspective Stage */
+    .curved-gallery-stage {
+      position: relative;
+      width: 100%;
+      height: clamp(300px, 44vh, 440px);
+      perspective: 1250px;
+      perspective-origin: 50% 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      cursor: grab;
+      touch-action: pan-y;
+      margin: 10px 0;
+      z-index: 5;
+    }
+
+    .curved-gallery-stage:active {
+      cursor: grabbing;
+    }
+
+    .curved-gallery-track {
+      position: relative;
+      width: 0;
+      height: 0;
+      transform-style: preserve-3d;
+    }
+
+    /* 3D Curved Card */
+    .curved-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: clamp(170px, 15vw, 230px);
+      height: clamp(240px, 22vw, 330px);
+      margin-left: calc(clamp(170px, 15vw, 230px) / -2);
+      margin-top: calc(clamp(240px, 22vw, 330px) / -2);
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .curved-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #180C06;
+      box-shadow:
+        0 26px 55px -12px rgba(0, 0, 0, 0.88),
+        0 10px 22px -6px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(226, 172, 105, 0.28) inset;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .curved-card:hover .curved-card-inner {
+      transform: translateY(-6px);
+      box-shadow:
+        0 36px 70px -14px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(226, 172, 105, 0.35),
+        0 0 0 1.5px rgba(226, 172, 105, 0.75) inset;
+    }
+
+    .curved-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .curved-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .curved-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(14, 7, 3, 0.92) 0%, rgba(14, 7, 3, 0.25) 45%, transparent 75%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px 18px;
+      color: #FFFFFF;
+      pointer-events: none;
+    }
+
+    .curved-card-badge {
+      align-self: flex-end;
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--amber);
+      background: rgba(18, 9, 5, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(226, 172, 105, 0.35);
+    }
+
+    .curved-card-meta {
+      transform: translateY(2px);
+      transition: transform 0.3s ease;
+    }
+
+    .curved-card:hover .curved-card-meta {
+      transform: translateY(0);
+    }
+
+    .curved-card-names {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(16px, 1.35vw, 19px);
+      line-height: 1.15;
+      color: #FFF8EE;
+      margin-bottom: 3px;
+    }
+
+    .curved-card-loc {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(241, 234, 220, 0.72);
+    }
+
+    /* Subtle footer instruction */
+    .curved-gallery-footer {
+      position: relative;
+      z-index: 10;
+      padding-top: 6px;
+    }
+
+    .curved-hint {
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: rgba(241, 234, 220, 0.45);
+      text-transform: uppercase;
+    }
+
+    /* Smooth exit blend from Lately into Approach */
+    .lately-exit-blend {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent, var(--parchment));
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @media (max-width: 768px) {
+      .curved-gallery-pinned {
+        height: auto !important;
+      }
+
+      .curved-gallery-sticky {
+        position: relative !important;
+        top: auto !important;
+        height: auto !important;
+        min-height: auto;
+        padding: 24px 12px 36px !important;
+      }
+
+      .curved-gallery-frame {
+        border-radius: 24px;
+        padding: 26px 14px 22px;
+        height: auto !important;
+        min-height: 560px;
+      }
+
+      .curved-gallery-header {
+        margin-bottom: 12px;
+      }
+
+      .curved-gallery-title {
+        font-size: 32px !important;
+      }
+
+      .curved-gallery-stage {
+        perspective: 850px;
+        height: 330px !important;
+        margin: 12px 0;
+        touch-action: pan-y;
+      }
+
+      .curved-card {
+        width: 170px !important;
+        height: 240px !important;
+        margin-left: -85px !important;
+        margin-top: -120px !important;
+      }
+    }
+
+    /* Refined Editorial Section Dividers */
+    #latelySection {
+      position: relative;
+      border-top: 1px solid rgba(226, 172, 105, 0.22);
+    }
+
+    #approachSection {
+      border-top: 1px solid rgba(44, 31, 24, 0.08);
+    }
+
+    #quoteSection {
+      border-top: 1px solid rgba(44, 31, 24, 0.08);
+    }
+
+    /* ================= The Approach Section (3D Scroll-Driven Stacking & Envelope Animation) ================= */
+    .approach-pinned-container {
+      position: relative;
+      width: 100%;
+      height: 200vh;
+      /* Snappy, fast scroll distance */
+      border-top: 1px solid rgba(44, 31, 24, 0.08);
+    }
+
+    .approach-sticky-viewport {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      perspective: 1600px;
+      padding: 30px 0;
+      box-sizing: border-box;
+    }
+
+    .approach-3d-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 24px;
+      perspective: 1600px;
+      transform-style: preserve-3d;
+    }
+
+    .approach-flipper {
+      position: relative;
+      width: 100%;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.08s linear;
+    }
+
+    .flipper-face {
+      width: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flipper-front {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      width: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .flipper-back {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(540px, 92vw);
+      max-width: 560px;
+      transform: translate(-50%, -50%) rotateY(180deg);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .approach-step {
+      position: relative;
+      padding: 26px 22px 30px;
+      min-height: clamp(470px, 60vh, 540px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      background: linear-gradient(172deg, #FCF8EE 0%, #F7EFE0 55%, #ECE2C8 100%);
+      border: 1px solid rgba(212, 175, 125, 0.55);
+      border-radius: 20px;
+      box-shadow:
+        0 22px 50px -14px rgba(44, 31, 24, 0.18),
+        0 0 32px -6px rgba(226, 172, 105, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 0 0 28px rgba(180, 140, 90, 0.09);
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+      transform-origin: center center;
+      transition: box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .approach-step::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(91deg, rgba(60, 38, 22, 0.025) 0 2px, transparent 2px 5px),
+        repeating-linear-gradient(2deg, rgba(60, 38, 22, 0.018) 0 1px, transparent 1px 3px);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 20px;
+    }
+
+    .approach-step>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    .approach-step:hover {
+      box-shadow:
+        0 28px 60px -12px rgba(44, 31, 24, 0.25),
+        0 0 40px -4px rgba(226, 172, 105, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    }
+
+    /* Final Letter Card (Back Face of 3D Flip Card) */
+    .final-approach-letter {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      box-shadow:
+        0 35px 90px -15px rgba(0, 0, 0, 0.65),
+        0 15px 35px -10px rgba(0, 0, 0, 0.45),
+        0 0 50px -5px rgba(226, 172, 105, 0.35);
+      border-radius: 20px;
+    }
+
+    .approach-step .num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      color: var(--carmine);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(122, 37, 24, 0.14);
+      font-weight: 600;
+    }
+
+    .approach-step h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: var(--wine);
+    }
+
+    .approach-step p {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      line-height: 1.68;
+      color: var(--smoke);
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .approach-pinned-container {
+        height: auto;
+        min-height: auto;
+      }
+
+      .approach-sticky-viewport {
+        position: relative;
+        height: auto;
+        padding: 60px 0;
+      }
+
+      .approach-3d-stage {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        perspective: none;
+      }
+
+      .approach-flipper {
+        transform: none !important;
+      }
+
+      .flipper-front {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      .flipper-back {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none !important;
+        width: 100%;
+        max-width: 100%;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+      }
+
+      .approach-step {
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+
+    /* Approach photo: the photograph keeps its own proportions, no cropping frame.
+       On desktop the cards sit in a pinned 100vh stage, so the photo is capped by height. */
+    .approach-photo-frame {
+      width: 100%;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .approach-photo-frame image-slot,
+    .approach-photo-frame img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: clamp(200px, 30vh, 260px);
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(44, 31, 24, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .approach-photo-frame img {
+        width: 100%;
+        max-height: none;
+      }
+    }
+
+    /* ================= Gallery Section (masonry, photos at their own proportions) ================= */
+    /* Column layout lives in _shared.css (.gallery-grid); nothing here fixes a height or crops. */
+    .gallery-section {
+      padding: 100px 0;
+      background: #FAF6EE;
+      border-top: 1px solid rgba(44, 31, 24, 0.08);
+    }
+
+    .gallery-grid {
+      margin-top: 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .gallery-item {
+      box-shadow: 0 4px 18px rgba(44, 31, 24, 0.09);
+      transition: box-shadow 0.4s var(--ease-cinematic);
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 12px 28px rgba(44, 31, 24, 0.16);
+    }
+
+    .gallery-item img {
+      transition: transform 0.6s var(--ease-cinematic);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* ================= YouTube Preview Carousel Section ================= */
+    .youtube-carousel-section {
+      padding: 90px 0;
+      background: #140904;
+      color: var(--cream);
+      overflow: hidden;
+      border-top: 1px solid rgba(226, 172, 105, 0.15);
+    }
+
+    .youtube-carousel-viewport {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .youtube-carousel-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: carouselMarquee 28s linear infinite;
+    }
+
+    .youtube-carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes carouselMarquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .yt-card {
+      display: block;
+      width: calc((100vw - 64px - 48px) / 4);
+      max-width: 320px;
+      min-width: 200px;
+      height: 400px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.35s var(--ease-cinematic), box-shadow 0.35s var(--ease-cinematic);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .yt-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .youtube-carousel-track {
+        gap: 10px;
+      }
+
+      .yt-card {
+        width: calc((100vw - 32px - 20px) / 3);
+        min-width: 95px;
+        height: 260px;
+        border-radius: 12px;
+      }
+    }
+
+    .yt-card video,
+    .yt-card iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* ================= Universal Section Animations ================= */
+    html.js-anim .fade-slide-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 1.2s var(--ease-cinematic), transform 1.2s var(--ease-cinematic);
+      will-change: transform, opacity;
+    }
+
+    html.js-anim .fade-slide-up.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html.js-anim .fade-slide-up[data-delay="1"] {
+      transition-delay: 0.15s;
+    }
+
+    html.js-anim .fade-slide-up[data-delay="2"] {
+      transition-delay: 0.30s;
+    }
+
+    /* Button styles */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      transition: background 200ms, color 200ms,
+        transform 0.45s var(--ease-cinematic),
+        box-shadow 0.45s var(--ease-cinematic);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.08) 20%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0.08) 80%,
+          transparent 100%);
+      transform: translateX(-140%) skewX(-22deg);
+      transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .btn:hover::before,
+    .btn:focus-visible::before {
+      transform: translateX(140%) skewX(-22deg);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn>* {
+      position: relative;
+      z-index: 3;
+    }
+
+    .btn .arrow {
+      display: inline-block;
+      transition: transform 0.45s var(--ease-cinematic);
+    }
+
+    .btn:hover .arrow,
+    .btn:focus-visible .arrow {
+      transform: translateX(6px);
+    }
+
+    html.js-anim .btn-reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 1s var(--ease-cinematic),
+        transform 1s var(--ease-cinematic);
+      transition-delay: calc(var(--stagger, 0) * 160ms);
+    }
+
+    html.js-anim .btn-reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .btn,
+      .btn::before,
+      .btn-reveal,
+      .approach-step,
+      .story-card,
+      .fade-slide-up {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "http://flow.colibrisocialclub.com/#business",
+        "name": "Thyzfoto",
+        "image": "http://flow.colibrisocialclub.com/og-image.jpg",
+        "url": "http://flow.colibrisocialclub.com/",
+        "email": "thyzfoto@gmail.com",
+        "description": "Editorial documentary wedding photographer based in New York City, available worldwide.",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "New York City"},
+          {"@type": "City", "name": "Brooklyn"},
+          {"@type": "AdministrativeArea", "name": "Long Island"},
+          {"@type": "AdministrativeArea", "name": "New Jersey"},
+          {"@type": "AdministrativeArea", "name": "Hudson Valley"}
+        ],
+        "founder": {"@id": "http://flow.colibrisocialclub.com/#uriel"},
+        "sameAs": [
+          "https://www.instagram.com/thyzfoto"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "http://flow.colibrisocialclub.com/#uriel",
+        "name": "Uriel T",
+        "jobTitle": "Wedding Photographer",
+        "worksFor": {"@id": "http://flow.colibrisocialclub.com/#business"},
+        "url": "http://flow.colibrisocialclub.com/about/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "http://flow.colibrisocialclub.com/#website",
+        "url": "http://flow.colibrisocialclub.com/",
+        "name": "Thyzfoto",
+        "publisher": {"@id": "http://flow.colibrisocialclub.com/#business"}
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav class="nav dark" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo" aria-label="Thyzfoto — Home">
+        <img src="logo.png" alt="Thyzfoto"
+          onerror="this.onerror=null;this.src='data:image/png;base64,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';">
+      </a>
+      <div class="nav-links">
+        <a href="./" class="nav-link active">Home</a>
+        <div class="nav-dropdown">
+          <a href="portfolio/" class="nav-link">Portfolio <span
+              class="nav-arrow">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="portfolio/weddings/" class="nav-dropdown-item"><span class="dot"></span> Wedding</a>
+            <a href="portfolio/engagements/" class="nav-dropdown-item"><span class="dot"></span> Engagement</a>
+          </div>
+        </div>
+        <a href="journal/" class="nav-link">Journal</a>
+        <a href="about/" class="nav-link">About</a>
+      </div>
+      <div class="nav-cta-wrap">
+        <a href="investment/" class="nav-cta">Write to me →</a>
+      </div>
+      <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" aria-label="Mobile menu">
+    <a href="./" class="mobile-nav-parent" style="padding: 12px 0; display: block;">Home</a>
+    <div class="mobile-nav-group">
+      <a href="portfolio/" class="mobile-nav-parent">Portfolio</a>
+      <div class="mobile-sub-nav">
+        <a href="portfolio/weddings/" class="mobile-sub-link">— Wedding</a>
+        <a href="portfolio/engagements/" class="mobile-sub-link">— Engagement</a>
+      </div>
+    </div>
+    <a href="journal/">Journal</a>
+    <a href="about/">About</a>
+    <a href="investment/" class="cta">Write to me →</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-image">
+      <img src="./0I7A6035.jpg" alt="Love, Kept in Light — New York Wedding Photography" class="hero-banner-img"
+        fetchpriority="high" onerror="this.onerror=null;this.src='images/0I7A6035.jpg';">
+    </div>
+    <div class="hero-content">
+      <div class="eyebrow-row hero-eyebrow fade-slide-up">
+        <span class="dot"></span>
+        <span class="eyebrow lbl">NEW YORK WEDDING PHOTOGRAPHER</span>
+      </div>
+      <h1 class="display fade-slide-up" data-delay="1"><em>LOVE, KEPT</em><br>IN LIGHT.</h1>
+      <div class="hero-foot">
+        <p class="fade-slide-up" data-delay="2">For couples who want a record of their day that feels less like
+          documentation and more like a long, slow letter back to themselves.</p>
+        <div class="hero-actions">
+          <a href="portfolio/" class="btn btn-ghost on-dark btn-reveal" style="--stagger:0">See the portfolio</a>
+          <a href="investment/" class="btn btn-primary btn-reveal" style="--stagger:1">Begin a conversation <span
+              class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Letter Section (Pinned 3D Scroller + Authentic A4 Paper Sheet Ratio) -->
+  <section class="letter-pinned-container" id="letterContainer" aria-label="A letter from Uriel">
+    <div class="letter-sticky-viewport" id="letterViewport">
+      <div class="letter-stage" id="letterStage">
+
+        <!-- 1. Upper Left: Pressed Botanical Sprig -->
+        <div class="memento-side side-left sprig" id="mementoSprig" aria-hidden="true" data-title="Pressed Botanical"
+          data-meta="Heirloom detail · single sprig">
+          <img id="home-letter-pressed" src="images/gallery/gallery_001.jpg"
+            alt="Pressed botanical sprig" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_001.jpg';">
+        </div>
+
+        <!-- 2. Lower Left: Film Print Photo with Washi Tape -->
+        <div class="memento-side side-left film-print" id="mementoPrint" aria-hidden="true"
+          data-title="Medium Format Print" data-meta="Environmental portrait · 4:5">
+          <div class="tape" style="--tape-rot: -3deg"></div>
+          <img id="home-letter-print" src="images/gallery/gallery_002.jpg"
+            alt="Film print portrait" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_002.jpg';">
+        </div>
+
+        <!-- 3. Upper Right: Polaroid Portrait ("the morning of") -->
+        <div class="memento-side side-right polaroid" id="mementoPolaroid" aria-hidden="true"
+          data-title="The Morning Of" data-meta="Bride portrait · golden hour">
+          <img id="home-letter-polaroid" src="images/gallery/gallery_003.jpg"
+            alt="Bride portrait" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_003.jpg';">
+        </div>
+
+        <!-- 4. Lower Right: Postcard with Metal Clip -->
+        <div class="memento-side side-right postcard" id="mementoPostcard" aria-hidden="true"
+          data-title="Venue Landscape" data-meta="Hudson Valley · 16:11">
+          <div class="clip"></div>
+          <img id="home-letter-postcard" src="images/gallery/gallery_004.jpg"
+            alt="Venue landscape" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_004.jpg';">
+        </div>
+
+        <article class="letter-paper" id="letterPaper">
+
+          <div class="bg-photo" aria-hidden="true">
+            <img id="home-letter-bg" src="images/gallery/gallery_005.jpg"
+              alt="Atmospheric ceremony background" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_005.jpg';">
+          </div>
+
+          <div class="stamp" aria-hidden="true">
+            <div class="pm">
+              <div class="pm-img">
+                <img id="home-letter-stamp" src="images/gallery/gallery_006.jpg"
+                  alt="Client portrait stamp" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_006.jpg';">
+              </div>
+              <div class="pm-cap">UR&middot;T</div>
+              <div class="pm-foot">BROOKLYN<br>NEW YORK</div>
+            </div>
+          </div>
+
+          <header class="head">
+            <a href="./" class="logo-wrap" aria-label="Thyzfoto">
+              <img src="logo.png" alt="Thyzfoto" class="logo-img"
+                onerror="this.onerror=null;this.src='data:image/png;base64,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';">
+            </a>
+            <div class="sub"><span class="yr">est. 20</span><span class="r"></span>Photography<span
+                class="r"></span><span class="yr">20</span></div>
+            <div class="tag">wherever love takes you</div>
+          </header>
+
+          <div class="meta-row">
+            <span>To whoever finds this</span>
+            <span id="dynamicLetterDate">26 · V · 2026</span>
+          </div>
+
+          <p class="salutation">Dear you both,</p>
+
+          <div class="body">
+            <p>
+              You're planning a wedding, which means a hundred small decisions have already
+              asked something of you this week. So let me make this one easier. My name is
+              <em>Uriel</em>, and I photograph weddings to hold the day still long enough that
+              you can return to it years later and feel it again.
+            </p>
+            <p>
+              I shoot around eighteen weddings a year on purpose, leaving the room to listen
+              to yours. If your day feels close to any of this, write back. I read every note myself.
+            </p>
+          </div>
+
+          <div class="foot-block"
+            style="text-align: left; margin-top: 12px; padding-bottom: 12px; display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+            <p class="signoff"
+              style="font-family: var(--font-serif); font-size: 24px; color: var(--ink); margin-bottom: 2px; text-align: left; width: 100%;">
+              Yours Uriel,</p>
+            <div class="seal" aria-hidden="true"
+              style="display: block; margin: 4px 0 0 0; clear: both; width: 72px; height: 72px; position: relative; z-index: 10; flex-shrink: 0;">
+              <img src="wax-seal.png" alt="Thyzfoto Wax Seal" class="seal-img"
+                style="width: 72px; height: 72px; margin: 0; display: block; filter: drop-shadow(0 4px 10px rgba(60,15,5,0.35));"
+                onerror="this.onerror=null;this.src='./wax-seal.png';">
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Approach Section (3D Scroll-Driven Stacking + Final Letter Card) -->
+  <section class="approach-pinned-container" id="approachSection">
+    <div class="approach-sticky-viewport">
+      <div class="container">
+        <div class="eyebrow-row" style="margin-bottom:16px">
+          <span class="dot"></span>
+          <span class="eyebrow lbl">THE <strong>APPROACH</strong></span>
+        </div>
+        <h2 style="margin-bottom:0;max-width:880px">
+          <em>From first letter<br>to last frame.</em>
+        </h2>
+        <div class="approach-3d-stage">
+          <div class="approach-flipper" id="approach3DFlipper">
+            <!-- Front Face: Step Cards 1, 2, 3 -->
+            <div class="flipper-face flipper-front">
+              <div class="approach-step step-1">
+                <div class="sheet-texture"></div>
+                <div class="approach-photo-frame">
+                  <img id="app-photo-1" src="images/gallery/gallery_003.jpg"
+                    alt="A first letter story" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_003.jpg';">
+                </div>
+                <div class="num">№ 01</div>
+                <h3>A first letter</h3>
+                <p>You write to me about the two of you. Where you met, how the day looks in your head, what scares you
+                  about being on camera. I read every note myself, and I write back.</p>
+              </div>
+
+              <div class="approach-step step-2">
+                <div class="sheet-texture"></div>
+                <div class="approach-photo-frame">
+                  <img id="app-photo-2" src="images/gallery/gallery_007.jpg"
+                    alt="A slow plan story" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_007.jpg';">
+                </div>
+                <div class="num">№ 02</div>
+                <h3>A slow plan</h3>
+                <p>We meet, over coffee in the city or a video call, and walk through your day hour by hour. I send a
+                  quiet,
+                  honest proposal. No upsells, no urgency, no panic.</p>
+              </div>
+
+              <div class="approach-step step-3">
+                <div class="sheet-texture"></div>
+                <div class="approach-photo-frame">
+                  <img id="app-photo-3" src="images/gallery/gallery_008.jpg"
+                    alt="The day kept story" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_008.jpg';">
+                </div>
+                <div class="num">№ 03</div>
+                <h3>The day, kept</h3>
+                <p>I arrive before the light shifts and stay until the last dance. You'll forget I'm there. A few weeks
+                  later, your photographs arrive, along with a printed album, if you chose one.</p>
+              </div>
+            </div><!-- /flipper-front -->
+
+            <!-- Back Face: Final Letter Contact Form -->
+            <div class="flipper-face flipper-back">
+              <article class="letter-paper final-approach-letter" id="approachFinalLetter"
+                style="padding: 24px 28px 36px; justify-content: space-between; box-sizing: border-box; aspect-ratio: auto; min-height: 520px; overflow: visible;">
+                <div class="paper-texture"></div>
+
+                <div class="stamp" aria-hidden="true">
+                  <div class="pm">
+                    <div class="pm-img">
+                      <img id="approach-letter-stamp" src="images/gallery/gallery_006.jpg"
+                        alt="Tiny portrait stamp" loading="lazy" onerror="this.onerror=null;this.src='/images/gallery/gallery_006.jpg';">
+                    </div>
+                    <div class="pm-cap">UR&middot;T</div>
+                    <div class="pm-foot">BROOKLYN<br>NEW YORK</div>
+                  </div>
+                </div>
+
+                <header class="head" style="text-align: center; margin-bottom: 6px; padding-bottom: 6px;">
+                  <a href="./" class="logo-wrap" aria-label="Thyzfoto" style="display: inline-block;">
+                    <img src="logo.png" alt="Thyzfoto" class="logo-img" style="height: 18px; width: auto;"
+                      onerror="this.onerror=null;this.src='data:image/png;base64,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#000000';">
+                  </a>
+                  <div class="sub"
+                    style="font-size: 9px; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase;"><span
+                      class="yr">EST. 20</span> &mdash; PHOTOGRAPHY &mdash; <span class="yr">20</span></div>
+                  <div class="tag"
+                    style="font-size: 9.5px; letter-spacing: 0.12em; font-style: italic; color: var(--gold); margin-top: 2px;">
+                    wherever love takes you</div>
+                </header>
+
+                <div class="meta-row" style="margin-top: 6px; margin-bottom: 6px;">
+                  <span>TO URIEL &middot; THYZFOTO</span>
+                  <span class="approachLetterDate">30 &middot; IX &middot; 2026</span>
+                </div>
+
+                <p class="salutation"
+                  style="margin-top: 6px; margin-bottom: 4px; font-family: var(--font-serif); font-size: 20px;">Dear,
+                </p>
+
+                <div class="body">
+                  <p
+                    style="position: relative; font-size: 13.5px; line-height: 1.5; color: var(--ink); margin-bottom: 6px;">
+                    <span
+                      style="float: left; font-family: var(--font-serif); font-size: 44px; line-height: 0.8; padding-right: 6px; padding-top: 2px; color: #5c3527;">Y</span>ou
+                    write to me about the two of you. Where you met, how the day looks in your head, what scares you
+                    about being on camera. I read every note myself, and I write back.
+                  </p>
+                </div>
+
+                <!-- Action Button matching reference screenshot -->
+                <div class="letter-form-trigger-wrap" style="margin: 8px 0 6px; text-align: center;">
+                  <button type="button" class="btn-write-to-me" id="writeToMeBtn"
+                    style="background: #3D1F14; color: #F7EFE0; border: none; padding: 12px 32px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; border-radius: 2px; box-shadow: 0 4px 14px rgba(0,0,0,0.22); transition: background 0.3s ease, transform 0.2s ease;">
+                    WRITE TO ME....
+                  </button>
+                </div>
+
+                <!-- Embedded Contact Form (Opens when WRITE TO ME.... is clicked) -->
+                <div class="letter-contact-form-wrapper" id="letterContactFormWrapper"
+                  style="display: none; opacity: 0; transition: opacity 0.4s ease; margin-top: 20px; text-align: left;">
+                  <form id="approachLetterForm" class="inquire-form approach-form"
+                    action="https://formspree.io/f/thyzfoto@gmail.com" method="POST">
+                    <input type="hidden" name="_to" value="thyzfoto@gmail.com">
+                    <input type="hidden" name="_subject" value="New Letter Inquiry — Thyzfoto">
+
+                    <div class="form-grid"
+                      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+                      <div class="field">
+                        <label for="appFullName"
+                          style="display: block; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; color: #8c7355; font-weight: 600;">Your
+                          Name(s) <span style="color:#c95c5c;">*</span></label>
+                        <input id="appFullName" name="fullName" type="text" required placeholder="e.g. Maya &amp; Owen"
+                          style="width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.85); border: 1px solid rgba(140,115,85,0.35); border-radius: 4px; font-family: inherit; font-size: 14px; color: #2a2826; box-sizing: border-box;">
+                      </div>
+
+                      <div class="field">
+                        <label for="appPhone"
+                          style="display: block; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; color: #8c7355; font-weight: 600;">Phone
+                          Number <span style="color:#c95c5c;">*</span></label>
+                        <input id="appPhone" name="phone" type="tel" required placeholder="(212) 555-0142"
+                          style="width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.85); border: 1px solid rgba(140,115,85,0.35); border-radius: 4px; font-family: inherit; font-size: 14px; color: #2a2826; box-sizing: border-box;">
+                      </div>
+
+                      <div class="field" style="grid-column: 1 / -1;">
+                        <label for="appEmail"
+                          style="display: block; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; color: #8c7355; font-weight: 600;">Email
+                          Address <span style="color:#c95c5c;">*</span></label>
+                        <input id="appEmail" name="email" type="email" required placeholder="you@example.com"
+                          style="width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.85); border: 1px solid rgba(140,115,85,0.35); border-radius: 4px; font-family: inherit; font-size: 14px; color: #2a2826; box-sizing: border-box;">
+                      </div>
+
+                      <div class="field">
+                        <label for="appWeddingDate"
+                          style="display: block; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; color: #8c7355; font-weight: 600;">Wedding
+                          Date / Season</label>
+                        <input id="appWeddingDate" name="weddingDate" type="text" placeholder="e.g. October 2026"
+                          style="width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.85); border: 1px solid rgba(140,115,85,0.35); border-radius: 4px; font-family: inherit; font-size: 14px; color: #2a2826; box-sizing: border-box;">
+                      </div>
+
+                      <div class="field">
+                        <label for="appWeddingLocation"
+                          style="display: block; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; color: #8c7355; font-weight: 600;">Location
+                          / Venue</label>
+                        <input id="appWeddingLocation" name="weddingLocation" type="text"
+                          placeholder="e.g. Brooklyn, NY"
+                          style="width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.85); border: 1px solid rgba(140,115,85,0.35); border-radius: 4px; font-family: inherit; font-size: 14px; color: #2a2826; box-sizing: border-box;">
+                      </div>
+
+                      <div class="field" style="grid-column: 1 / -1;">
+                        <label for="appDetails"
+                          style="display: block; font-size: 11px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; color: #8c7355; font-weight: 600;">Tell
+                          Me About Your Day <span style="color:#c95c5c;">*</span></label>
+                        <textarea id="appDetails" name="details" rows="4" required
+                          placeholder="Where you met, what you're imagining, any details you'd like me to know..."
+                          style="width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.85); border: 1px solid rgba(140,115,85,0.35); border-radius: 4px; font-family: inherit; font-size: 14px; color: #2a2826; resize: vertical; box-sizing: border-box;"></textarea>
+                      </div>
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: center;">
+                      <button type="submit" class="btn-write-to-me" id="appSubmitBtn"
+                        style="background: #3D1F14; color: #F7EFE0; border: none; padding: 14px 36px; font-family: var(--font-sans); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: 2px;">
+                        Send my letter &rarr;
+                      </button>
+                    </div>
+                  </form>
+
+                  <div id="approachFormSuccess"
+                    style="display: none; padding: 20px; text-align: center; background: rgba(245,236,218,0.95); border: 1px solid #8c7355; border-radius: 6px; margin-top: 16px;">
+                    <h4 style="font-family: var(--font-serif); font-size: 20px; color: #2a2826; margin-bottom: 6px;">
+                      <em>Your letter has been sent.</em>
+                    </h4>
+                    <p style="font-size: 14px; color: #2a2826; line-height: 1.5; margin: 0;">Thank you for writing. Your
+                      message has been sent to <strong>thyzfoto@gmail.com</strong>. Uriel will read it personally and
+                      reply soon.</p>
+                  </div>
+                </div>
+
+                <div class="foot-block"
+                  style="margin-top: 10px; padding-bottom: 8px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+                  <p class="signoff"
+                    style="font-family: var(--font-serif); font-size: 22px; color: var(--ink); margin-bottom: 2px; text-align: left; width: 100%;">
+                    Yours Uriel,</p>
+                  <div class="seal" aria-hidden="true"
+                    style="display: block; margin: 4px 0 0 0; clear: both; width: 68px; height: 68px; position: relative; z-index: 10; flex-shrink: 0;">
+                    <img src="wax-seal.png" alt="Thyzfoto Wax Seal" class="seal-img"
+                      style="width: 68px; height: 68px; margin: 0; display: block; filter: drop-shadow(0 4px 10px rgba(60,15,5,0.35));"
+                      onerror="this.onerror=null;this.src='./wax-seal.png';">
+                  </div>
+                </div>
+              </article>
+            </div><!-- /flipper-back -->
+          </div><!-- /approach3DFlipper -->
+        </div><!-- /approach-3d-stage -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section (Curated Stories on Homepage) -->
+  <section class="section gallery-section" id="gallerySection">
+    <div class="container">
+      <div style="margin-bottom: 36px;">
+        <div class="eyebrow-row fade-slide-up" style="margin-bottom:16px;">
+          <span class="dot"></span>
+          <span class="eyebrow lbl">GALLERY · <strong>SELECTED MOMENTS</strong></span>
+        </div>
+        <h2 class="fade-slide-up" data-delay="1" style="margin-bottom:0; max-width:880px">
+          <em>Kept in light,<br>frame by frame.</em>
+        </h2>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Column 1 (10 items) -->
+        <div class="gallery-col">
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0B2A9074.jpg" width="1334" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A0087.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A0332.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A0478.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A0661.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A1580.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A1978.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A2307.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A2309.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A2702.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+        </div>
+        <!-- Column 2 (10 items) -->
+        <div class="gallery-col">
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A2739.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A3652.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A4201.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A4537.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A5256.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A5285.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A5557.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A6072.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A6099.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A6288.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+        </div>
+        <!-- Column 3 (9 items) -->
+        <div class="gallery-col">
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A6714.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A9827A.jpg" width="2000" height="1333" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A9835.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0I7A9915.jpg" width="1333" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0J4A1917.jpg" width="1334" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0J4A3462.jpg" width="1334" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0J4A3531.jpg" width="2000" height="1334" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0J4A3814.jpg" width="1334" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/home_gallery/0J4A8814.jpg" width="1334" height="2000" alt="Editorial Documentary Wedding Photography — New York"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pinned Scroll-Driven Reviews Section: Letter Page Change Design -->
+  <section class="reviews-pinned-container" id="reviewsContainer" aria-label="Reviews from couples">
+    <div class="reviews-sticky-viewport" id="reviewsViewport">
+
+      <div class="reviews-aura" aria-hidden="true"></div>
+
+      <!-- Header -->
+      <div class="reviews-head fade-slide-up">
+        <h2>Reviews, kept<br><span class="gold-script">like letters.</span></h2>
+      </div>
+
+      <!-- Letter Stage: Stack of physical stationery letter pages that turn / flip -->
+      <div class="reviews-letter-stage" id="reviewsLetterStage" role="region" aria-roledescription="carousel"
+        aria-label="Couple Review Letters">
+
+        <!-- Letter 0: Maya & Owen -->
+        <article class="review-letter-page is-active" data-index="0" id="revLetter-0"
+          aria-label="Letter from Maya and Owen">
+          <div class="letter-sheet">
+            <div class="sheet-texture" aria-hidden="true"></div>
+            <div class="sheet-head">
+              <div class="sheet-dispatch">
+                <span class="sheet-badge">ARCHIVE LETTER № 01</span>
+                <span class="sheet-folio">FOLIO / HUDSON VALLEY</span>
+              </div>
+              <div class="sheet-stamp" aria-hidden="true">
+                <div class="stamp-inner">
+                  <span class="stamp-country">NEW YORK</span>
+                  <span class="stamp-icon">✦</span>
+                  <span class="stamp-val">06 · 2025</span>
+                  <span class="stamp-city">HUDSON</span>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-content">
+              <h3 class="sheet-salutation">letter from <em>Maya &amp; Owen</em></h3>
+              <blockquote class="sheet-quote">
+                &ldquo;Like a friend with a camera, not a vendor with a checklist. We forgot you were there, and then
+                the photographs arrived and we remembered everything.&rdquo;
+              </blockquote>
+            </div>
+            <div class="sheet-foot">
+              <div class="sheet-location">
+                <span class="pin-symbol">📍</span> Hudson Valley, New York &middot; June 2025
+              </div>
+              <div class="sheet-signoff">
+                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
+                <div class="mini-seal" aria-hidden="true">
+                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
+                </div>
+              </div>
+            </div>
+            <div class="sheet-turn-shadow" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <!-- Letter 1: Iris & Theo -->
+        <article class="review-letter-page" data-index="1" id="revLetter-1" aria-label="Letter from Iris and Theo">
+          <div class="letter-sheet">
+            <div class="sheet-texture" aria-hidden="true"></div>
+            <div class="sheet-head">
+              <div class="sheet-dispatch">
+                <span class="sheet-badge">ARCHIVE LETTER № 02</span>
+                <span class="sheet-folio">FOLIO / BROOKLYN RECEPTION</span>
+              </div>
+              <div class="sheet-stamp" aria-hidden="true">
+                <div class="stamp-inner">
+                  <span class="stamp-country">NEW YORK</span>
+                  <span class="stamp-icon">✦</span>
+                  <span class="stamp-val">09 · 2025</span>
+                  <span class="stamp-city">BROOKLYN</span>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-content">
+              <h3 class="sheet-salutation">letter from <em>Iris &amp; Theo</em></h3>
+              <blockquote class="sheet-quote">
+                &ldquo;We photographed our wedding like he&rsquo;d known us for years. Nothing posed, nothing
+                rushed&ensp;&mdash;&ensp;just the day, exactly as it felt.&rdquo;
+              </blockquote>
+            </div>
+            <div class="sheet-foot">
+              <div class="sheet-location">
+                <span class="pin-symbol">📍</span> Brooklyn, New York &middot; Fall 2025
+              </div>
+              <div class="sheet-signoff">
+                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
+                <div class="mini-seal" aria-hidden="true">
+                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
+                </div>
+              </div>
+            </div>
+            <div class="sheet-turn-shadow" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <!-- Letter 2: Noor & Dev -->
+        <article class="review-letter-page" data-index="2" id="revLetter-2" aria-label="Letter from Noor and Dev">
+          <div class="letter-sheet">
+            <div class="sheet-texture" aria-hidden="true"></div>
+            <div class="sheet-head">
+              <div class="sheet-dispatch">
+                <span class="sheet-badge">ARCHIVE LETTER № 03</span>
+                <span class="sheet-folio">FOLIO / TULUM DESTINATION</span>
+              </div>
+              <div class="sheet-stamp" aria-hidden="true">
+                <div class="stamp-inner">
+                  <span class="stamp-country">MEXICO</span>
+                  <span class="stamp-icon">✦</span>
+                  <span class="stamp-val">04 · 2025</span>
+                  <span class="stamp-city">TULUM</span>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-content">
+              <h3 class="sheet-salutation">letter from <em>Noor &amp; Dev</em></h3>
+              <blockquote class="sheet-quote">
+                &ldquo;We were the couple dreading every photo. By the second hour we&rsquo;d completely forgotten the
+                camera was there. The gallery still makes us cry.&rdquo;
+              </blockquote>
+            </div>
+            <div class="sheet-foot">
+              <div class="sheet-location">
+                <span class="pin-symbol">📍</span> Tulum, Mexico &middot; Spring 2025
+              </div>
+              <div class="sheet-signoff">
+                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
+                <div class="mini-seal" aria-hidden="true">
+                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
+                </div>
+              </div>
+            </div>
+            <div class="sheet-turn-shadow" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <!-- Letter 3: Zara & Eli -->
+        <article class="review-letter-page" data-index="3" id="revLetter-3" aria-label="Letter from Zara and Eli">
+          <div class="letter-sheet">
+            <div class="sheet-texture" aria-hidden="true"></div>
+            <div class="sheet-head">
+              <div class="sheet-dispatch">
+                <span class="sheet-badge">ARCHIVE LETTER № 04</span>
+                <span class="sheet-folio">FOLIO / UPSTATE HUDSON</span>
+              </div>
+              <div class="sheet-stamp" aria-hidden="true">
+                <div class="stamp-inner">
+                  <span class="stamp-country">CATSKILLS</span>
+                  <span class="stamp-icon">✦</span>
+                  <span class="stamp-val">05 · 2025</span>
+                  <span class="stamp-city">NEW YORK</span>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-content">
+              <h3 class="sheet-salutation">letter from <em>Zara &amp; Eli</em></h3>
+              <blockquote class="sheet-quote">
+                &ldquo;The proposal in our first email was honest and unhurried&ensp;&mdash;&ensp;no upsells, no
+                pressure. The photographs arrived exactly the same way.&rdquo;
+              </blockquote>
+            </div>
+            <div class="sheet-foot">
+              <div class="sheet-location">
+                <span class="pin-symbol">📍</span> Catskills, New York &middot; Spring 2025
+              </div>
+              <div class="sheet-signoff">
+                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
+                <div class="mini-seal" aria-hidden="true">
+                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
+                </div>
+              </div>
+            </div>
+            <div class="sheet-turn-shadow" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <!-- Letter 4: Lola & Sam -->
+        <article class="review-letter-page" data-index="4" id="revLetter-4" aria-label="Letter from Lola and Sam">
+          <div class="letter-sheet">
+            <div class="sheet-texture" aria-hidden="true"></div>
+            <div class="sheet-head">
+              <div class="sheet-dispatch">
+                <span class="sheet-badge">ARCHIVE LETTER № 05</span>
+                <span class="sheet-folio">FOLIO / MONTAUK COASTAL</span>
+              </div>
+              <div class="sheet-stamp" aria-hidden="true">
+                <div class="stamp-inner">
+                  <span class="stamp-country">LONG ISLAND</span>
+                  <span class="stamp-icon">✦</span>
+                  <span class="stamp-val">07 · 2025</span>
+                  <span class="stamp-city">MONTAUK</span>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-content">
+              <h3 class="sheet-salutation">letter from <em>Lola &amp; Sam</em></h3>
+              <blockquote class="sheet-quote">
+                &ldquo;Every frame feels like a page from a longer story. Our parents still ask to see the album
+                again&ensp;&mdash;&ensp;it&rsquo;s become a family object, not just photos.&rdquo;
+              </blockquote>
+            </div>
+            <div class="sheet-foot">
+              <div class="sheet-location">
+                <span class="pin-symbol">📍</span> Montauk, New York &middot; Summer 2025
+              </div>
+              <div class="sheet-signoff">
+                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
+                <div class="mini-seal" aria-hidden="true">
+                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
+                </div>
+              </div>
+            </div>
+            <div class="sheet-turn-shadow" aria-hidden="true"></div>
+          </div>
+        </article>
+
+      </div>
+
+
+
+    </div>
+    <div class="reviews-exit-blend" aria-hidden="true"></div>
+  </section>
+
+  <!-- YouTube Hero Feature Section (Full-width video with text overlay & redirect link) -->
+  <section class="section youtube-feature-section" id="youtubeFeatureSection"
+    style="position: relative; padding: 0; min-height: clamp(650px, 75vh, 800px); overflow: hidden; background: #0c0b0a; display: flex; align-items: center; justify-content: center;">
+    <!-- YouTube Video Background Container -->
+    <a href="https://www.youtube.com/watch?v=unAHFUuzfj4&amp;time_continue=2&amp;source_ve_path=MjM4NTE&amp;embeds_referring_euri=https%3A%2F%2Fwww.thyzfoto.com%2F"
+      target="_blank" rel="noopener noreferrer" class="yt-hero-link-wrapper"
+      aria-label="Watch real 10-hour behind-the-scenes wedding day on YouTube"
+      style="display: block; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; text-decoration: none; color: inherit;">
+
+      <div class="yt-video-bg"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none;">
+        <img src="./images/yt_feature_poster.jpg" alt="Behind the scenes wedding day film" class="yt-poster-img"
+          style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; filter: brightness(0.85) contrast(1.05);">
+        <iframe id="ytFeatureIframe"
+          src="https://www.youtube.com/embed/unAHFUuzfj4?autoplay=1&amp;mute=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1"
+          title="Behind the scenes wedding day film — Thyzfoto" frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100%; min-width: 177.77vh; transform: translate(-50%, -50%); opacity: 0.7; filter: brightness(0.85) contrast(1.05);"></iframe>
+      </div>
+      <script>
+        (function () {
+          // YouTube embeds require HTTP/HTTPS origin and reject file:// protocol with Error 153
+          if (window.location.protocol === 'file:') {
+            var f = document.getElementById('ytFeatureIframe');
+            if (f) f.remove();
+          }
+        })();
+      </script>
+
+      <!-- Overlay Tint Gradient for perfect legibility matching reference -->
+      <div class="yt-overlay"
+        style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 100%); z-index: 2;">
+      </div>
+
+      <!-- Centered Content Overlay -->
+      <div class="yt-hero-content"
+        style="position: relative; z-index: 3; max-width: 800px; padding: 60px 24px; text-align: center; margin: 0 auto; color: #ffffff;">
+        <h2 class="yt-hero-title fade-slide-up"
+          style="font-family: var(--font-sans, system-ui, -apple-system); font-size: clamp(28px, 4.5vw, 48px); font-weight: 400; color: #ffffff; letter-spacing: -0.01em; line-height: 1.25; margin: 0 0 16px 0;">
+          See What Your Wedding Day Will Feel Like
+        </h2>
+
+        <p class="yt-hero-subtitle fade-slide-up" data-delay="1"
+          style="font-size: clamp(14px, 1.8vw, 16px); color: rgba(255, 255, 255, 0.85); max-width: 640px; margin: 0 auto 36px auto; line-height: 1.6; font-weight: 300; letter-spacing: 0.01em;">
+          Watch a real 10-hour behind-the-scenes wedding day—and picture your story captured with the same care, energy,
+          and attention to detail.
+        </p>
+
+        <!-- Circular Play Button Icon -->
+        <div class="yt-play-button-icon fade-slide-up" data-delay="2"
+          style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; background: rgba(255, 255, 255, 0.92); border-radius: 50%; box-shadow: 0 12px 36px rgba(0,0,0,0.4); transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease;">
+          <svg width="24" height="28" viewBox="0 0 24 28" fill="#1b1816" style="margin-left: 4px;">
+            <polygon points="0,0 24,14 0,28" />
+          </svg>
+        </div>
+      </div>
+    </a>
+  </section>
+
+
+
+  <!-- Bottom CTA Section -->
+  <section class="section cta-section" id="ctaSection"
+    style="background: var(--ink); color: var(--cream); text-align: center; padding: 128px 48px">
+    <div class="cta-trail-layer" id="ctaTrailLayer" aria-hidden="true"></div>
+    <div class="container narrow" style="position: relative; z-index: 5;">
+      <h2 class="fade-slide-up" style="color: var(--cream)"><em>When the day is yours,<br>let's begin.</em></h2>
+      <p class="fade-slide-up" data-delay="1"
+        style="font-size: 16px; color: rgba(241,234,220,0.7); max-width: 520px; margin: 32px auto 48px; line-height: 1.65">
+        A short note is enough: names, date, the kind of day you're imagining. I usually reply within two days.
+      </p>
+      <div class="fade-slide-up" data-delay="2" style="position: relative; z-index: 10;">
+        <a href="investment/" class="btn btn-primary">Begin a conversation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footerSection">
+    <div class="footer-inner">
+      <div class="footer-signoff fade-slide-up">Yours Uriel,</div>
+      <div class="footer-cols fade-slide-up" data-delay="1">
+        <div>
+          <div class="footer-col-eyebrow">WRITE TO ME</div>
+          <div class="footer-write">
+            <a href="mailto:thyzfoto@gmail.com">thyzfoto@gmail.com</a><br>
+            <span class="meta">New York &nbsp;·&nbsp; available worldwide</span>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-eyebrow">WORK</div>
+          <div class="footer-list">
+            <a href="./">Home →</a>
+            <a href="portfolio/">Portfolio →</a>
+            <a href="portfolio/weddings/">Wedding →</a>
+            <a href="portfolio/engagements/">Engagement →</a>
+            <a href="journal/">Journal →</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-eyebrow">PRACTICE</div>
+          <div class="footer-list">
+            <a href="about/">About →</a>
+            <a href="investment/">Investment →</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-eyebrow">ELSEWHERE</div>
+          <div class="footer-list">
+            <a href="https://www.instagram.com/thyzfoto" target="_blank" rel="noopener">Instagram →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom fade-slide-up" data-delay="2">
+        <span>© THYZFOTO · <span data-year>2026</span></span>
+        <span>NYC · AVAILABLE WORLDWIDE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="_shared.js?v=hostinger_v104" defer></script>
+
+
+  <!-- Pinned 3D Letter Scroller: Approaching on Scroll, 100% Reversible on Scroll Up -->
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const container = document.getElementById('letterContainer');
+      const paper = document.getElementById('letterPaper');
+      const mementos = [
+        { el: document.getElementById('mementoSprig'), initX: -110, initY: -40, targetRot: -5 },
+        { el: document.getElementById('mementoPolaroid'), initX: 110, initY: -30, targetRot: 4 },
+        { el: document.getElementById('mementoPrint'), initX: -110, initY: 50, targetRot: -3.5 },
+        { el: document.getElementById('mementoPostcard'), initX: 110, initY: 40, targetRot: -2 }
+      ].filter(i => i.el !== null);
+
+      if (!container || !paper) return;
+
+      if (reduceMotion) {
+        paper.style.opacity = '1';
+        paper.style.transform = 'scale(1) rotate(-0.2deg)';
+        mementos.forEach(m => { m.el.style.opacity = '1'; m.el.style.transform = `rotate(${m.targetRot}deg)`; });
+        return;
+      }
+
+      let rafId = null;
+      let targetProgress = 0;
+      let currentProgress = 0;
+
+      function renderLetterProgress(p) {
+        // Middle letter comes up FASTER than the rest of the images:
+        // Arrives quickly into full scale & focus within first 40% of scroll
+        const letterP = Math.min(1, p / 0.40);
+        const easeLetter = 1 - Math.pow(1 - letterP, 3); // fast ease-out
+
+        const scale = 0.88 + easeLetter * 0.14; // 0.88 -> 1.02
+        const opacity = Math.min(1, 0.85 + easeLetter * 0.15); // clearly visible in web mode
+        const transY = (1 - easeLetter) * 40;
+        const zSpace = (1 - easeLetter) * -120;
+
+        paper.style.transform = `perspective(1200px) translate3d(0, ${transY.toFixed(1)}px, ${zSpace.toFixed(1)}px) scale(${scale.toFixed(3)}) rotate(-0.3deg)`;
+        paper.style.opacity = opacity.toFixed(3);
+
+        // Surrounding keepsake images appear AFTER the middle letter
+        // They begin appearing when p >= 0.28 and stagger into view up to p = 0.95
+        const isMobile = window.innerWidth <= 768;
+        const spreadFactor = isMobile ? 0.35 : 1;
+
+        mementos.forEach((item, idx) => {
+          const startP = 0.28 + idx * 0.13;
+          const endP = Math.min(0.96, startP + 0.36);
+          const raw = (p - startP) / (endP - startP);
+          const itemP = Math.max(0, Math.min(1, raw));
+
+          const easeP = Math.sin(itemP * Math.PI / 2);
+          const curX = (item.initX * spreadFactor) * (1 - easeP);
+          const curY = (item.initY * spreadFactor) * (1 - easeP);
+          const curScale = (isMobile ? 0.70 : 0.65) + easeP * (isMobile ? 0.30 : 0.35);
+          const curOpacity = Math.max(0, Math.min(1, easeP * 1.3));
+          const curRot = item.targetRot * easeP;
+
+          item.el.style.transform = `translate3d(${curX.toFixed(1)}px, ${curY.toFixed(1)}px, 0) scale(${curScale.toFixed(3)}) rotate(${curRot.toFixed(2)}deg)`;
+          item.el.style.opacity = curOpacity.toFixed(3);
+        });
+      }
+
+      function letterAnimLoop() {
+        const delta = targetProgress - currentProgress;
+        if (Math.abs(delta) > 0.001) {
+          currentProgress += delta * 0.14;
+          renderLetterProgress(currentProgress);
+          rafId = requestAnimationFrame(letterAnimLoop);
+        } else {
+          currentProgress = targetProgress;
+          renderLetterProgress(currentProgress);
+          rafId = null;
+        }
+      }
+
+      function onScrollLetter() {
+        const rect = container.getBoundingClientRect();
+        const scrollableH = container.offsetHeight - window.innerHeight;
+        if (scrollableH <= 0) return;
+
+        targetProgress = Math.max(0, Math.min(1, -rect.top / scrollableH));
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(letterAnimLoop);
+        }
+      }
+
+      window.addEventListener('scroll', onScrollLetter, { passive: true });
+      window.addEventListener('resize', onScrollLetter, { passive: true });
+      onScrollLetter();
+      renderLetterProgress(0);
+    })();
+  </script>
+
+  <!-- Pinned Scroll-Driven Reviews: Letter Page Change Engine -->
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const container = document.getElementById('reviewsContainer');
+      const stage = document.getElementById('reviewsLetterStage');
+      if (!container || !stage) return;
+
+      const pages = [...stage.querySelectorAll('.review-letter-page')];
+      const totalPages = pages.length;
+      const prevBtn = document.getElementById('folioPrevBtn');
+      const nextBtn = document.getElementById('folioNextBtn');
+      const dots = [...document.querySelectorAll('.folio-dot')];
+      const pageLabel = document.getElementById('folioPageLabel');
+
+      let currentPos = 0;
+      let targetPos = 0;
+      let rafId = null;
+      let isMobile = window.innerWidth <= 768;
+
+      function updateNavUI(activeIdx) {
+        const clamped = Math.max(0, Math.min(totalPages - 1, Math.round(activeIdx)));
+        if (pageLabel) {
+          pageLabel.textContent = `${String(clamped + 1).padStart(2, '0')} / ${String(totalPages).padStart(2, '0')}`;
+        }
+        if (prevBtn) prevBtn.disabled = clamped === 0;
+        if (nextBtn) nextBtn.disabled = clamped === totalPages - 1;
+
+        dots.forEach((dot, idx) => {
+          const isActive = idx === clamped;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+
+      function renderDesktopPages(pos) {
+        pages.forEach((page, i) => {
+          const diff = i - pos;
+          const shadowEl = page.querySelector('.sheet-turn-shadow');
+
+          if (diff <= -1.0) {
+            page.style.transform = 'translate3d(calc(-50% - 90px), -50%, -40px) rotateY(-82deg) rotateZ(-6deg) scale(0.92)';
+            page.style.opacity = '0';
+            page.style.visibility = 'hidden';
+            page.style.pointerEvents = 'none';
+            page.classList.remove('is-active');
+            if (shadowEl) shadowEl.style.opacity = '0';
+            return;
+          }
+
+          if (diff > 3.0) {
+            page.style.opacity = '0';
+            page.style.visibility = 'hidden';
+            page.style.pointerEvents = 'none';
+            page.classList.remove('is-active');
+            if (shadowEl) shadowEl.style.opacity = '0';
+            return;
+          }
+
+          page.style.visibility = 'visible';
+
+          if (diff < 0) {
+            const t = -diff;
+            const rotY = reduceMotion ? 0 : -t * 78;
+            const rotZ = reduceMotion ? 0 : -t * 5;
+            const transX = -t * 85;
+            const transY = reduceMotion ? 0 : -Math.sin(t * Math.PI) * 22;
+            const scale = 1 - t * 0.05;
+            const op = t > 0.75 ? Math.max(0, 1 - (t - 0.75) / 0.25) : 1;
+
+            page.style.transformOrigin = 'left center';
+            page.style.transform = `translate3d(calc(-50% + ${transX.toFixed(1)}px), calc(-50% + ${transY.toFixed(1)}px), 0) rotateY(${rotY.toFixed(1)}deg) rotateZ(${rotZ.toFixed(1)}deg) scale(${scale.toFixed(3)})`;
+            page.style.opacity = op.toFixed(3);
+            page.style.zIndex = 25;
+            page.style.pointerEvents = t < 0.3 ? 'auto' : 'none';
+            page.classList.toggle('is-active', t < 0.3);
+
+            if (shadowEl) {
+              shadowEl.style.opacity = (Math.sin(t * Math.PI) * 0.75).toFixed(2);
+            }
+          } else if (diff < 1.0) {
+            const t = diff;
+            const transY = t * 10;
+            const rotZ = reduceMotion ? 0 : t * 1.2;
+            const scale = 1 - t * 0.035;
+
+            page.style.transformOrigin = 'center center';
+            page.style.transform = `translate3d(-50%, calc(-50% + ${transY.toFixed(1)}px), 0) rotateZ(${rotZ.toFixed(1)}deg) scale(${scale.toFixed(3)})`;
+            page.style.opacity = '1';
+            page.style.zIndex = 20;
+            page.style.pointerEvents = 'auto';
+            page.classList.toggle('is-active', t < 0.4);
+
+            if (shadowEl) shadowEl.style.opacity = '0';
+          } else {
+            const stackIdx = diff;
+            const transY = Math.min(30, stackIdx * 10);
+            const rotZ = reduceMotion ? 0 : (i % 2 === 0 ? 1 : -1) * Math.min(2.5, stackIdx * 1.2);
+            const scale = Math.max(0.90, 1 - stackIdx * 0.03);
+            const op = Math.max(0.2, 1 - (stackIdx - 1) * 0.35);
+
+            page.style.transformOrigin = 'center center';
+            page.style.transform = `translate3d(-50%, calc(-50% + ${transY.toFixed(1)}px), 0) rotateZ(${rotZ.toFixed(1)}deg) scale(${scale.toFixed(3)})`;
+            page.style.opacity = op.toFixed(3);
+            page.style.zIndex = Math.max(2, Math.round(18 - stackIdx * 3));
+            page.style.pointerEvents = 'none';
+            page.classList.remove('is-active');
+
+            if (shadowEl) shadowEl.style.opacity = '0';
+          }
+        });
+
+        updateNavUI(pos);
+      }
+
+      function animationLoop() {
+        if (isMobile) return;
+        const delta = targetPos - currentPos;
+        if (Math.abs(delta) > 0.002) {
+          currentPos += delta * 0.14;
+          renderDesktopPages(currentPos);
+          rafId = requestAnimationFrame(animationLoop);
+        } else {
+          currentPos = targetPos;
+          renderDesktopPages(currentPos);
+          rafId = null;
+        }
+      }
+
+      function onWindowScroll() {
+        if (isMobile) return;
+        const rect = container.getBoundingClientRect();
+        const scrollableH = container.offsetHeight - window.innerHeight;
+        if (scrollableH <= 0) return;
+
+        const progress = Math.max(0, Math.min(1, -rect.top / scrollableH));
+        targetPos = progress * (totalPages - 1);
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(animationLoop);
+        }
+      }
+
+      function goToLetter(index, smooth = true) {
+        const clamped = Math.max(0, Math.min(totalPages - 1, index));
+        if (isMobile) {
+          const targetCard = pages[clamped];
+          if (targetCard) {
+            stage.scrollTo({
+              left: targetCard.offsetLeft - stage.offsetLeft - 16,
+              behavior: smooth ? 'smooth' : 'auto'
+            });
+            updateNavUI(clamped);
+          }
+        } else {
+          const scrollableH = container.offsetHeight - window.innerHeight;
+          if (scrollableH > 0) {
+            const targetScrollY = container.offsetTop + (clamped / (totalPages - 1)) * scrollableH;
+            window.scrollTo({
+              top: targetScrollY,
+              behavior: smooth ? 'smooth' : 'auto'
+            });
+          }
+        }
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => goToLetter(Math.round(currentPos) - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => goToLetter(Math.round(currentPos) + 1));
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+          goToLetter(idx);
+        });
+      });
+
+      window.addEventListener('scroll', onWindowScroll, { passive: true });
+      window.addEventListener('resize', () => {
+        isMobile = window.innerWidth <= 768;
+        if (!isMobile) onWindowScroll();
+      }, { passive: true });
+
+      onWindowScroll();
+    })();
+  </script>
+
+  <!-- Cursor Image Trail Effects for Quote Section (Behind Text) & CTA Section (Normal) -->
+  <script>
+    (function initSectionCursorTrails() {
+      const trailPhotos = [
+        "./images/gallery/gallery_009.jpg",
+        "./images/gallery/gallery_005.jpg",
+        "./images/gallery/gallery_016.jpg",
+        "./images/gallery/gallery_015.jpg",
+        "./images/gallery/gallery_017.jpg",
+        "./images/gallery/gallery_006.jpg",
+        "./images/gallery/gallery_018.jpg",
+        "./images/gallery/gallery_019.jpg",
+        "./images/gallery/gallery_020.jpg",
+        "./images/gallery/gallery_021.jpg",
+        "./images/gallery/gallery_022.jpg",
+        "./images/gallery/gallery_023.jpg",
+        "./images/gallery/gallery_024.jpg",
+        "./images/gallery/gallery_025.jpg",
+        "./images/gallery/gallery_026.jpg",
+        "./images/gallery/gallery_027.jpg",
+        "./images/gallery/gallery_028.jpg",
+        "./images/gallery/gallery_029.jpg",
+        "./images/gallery/gallery_030.jpg",
+        "./images/gallery/gallery_031.jpg",
+        "./images/gallery/gallery_032.jpg",
+        "./images/gallery/gallery_033.jpg",
+        "./images/gallery/gallery_034.jpg",
+        "./images/gallery/gallery_035.jpg",
+        "./images/gallery/gallery_036.jpg",
+        "./images/gallery/gallery_037.jpg",
+        "./images/gallery/gallery_038.jpg",
+        "./images/gallery/gallery_039.jpg",
+        "./images/gallery/gallery_040.jpg",
+        "./images/gallery/gallery_041.jpg"
+      ];
+
+      // Preload first batch of photos
+      trailPhotos.slice(0, 15).forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+
+      function createTrailHandler(sectionEl, layerEl, itemClassName, distThreshold) {
+        if (!sectionEl || !layerEl) return;
+
+        let lastX = -999;
+        let lastY = -999;
+        let photoIndex = 0;
+        const MAX_ACTIVE = 10;
+
+        function spawn(clientX, clientY) {
+          const rect = sectionEl.getBoundingClientRect();
+          if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) {
+            return;
+          }
+
+          const x = clientX - rect.left;
+          const y = clientY - rect.top;
+          const dist = Math.hypot(x - lastX, y - lastY);
+          if (dist < distThreshold) return;
+
+          lastX = x;
+          lastY = y;
+
+          while (layerEl.children.length >= MAX_ACTIVE) {
+            layerEl.removeChild(layerEl.firstChild);
+          }
+
+          const photoSrc = trailPhotos[photoIndex];
+          photoIndex = (photoIndex + 1) % trailPhotos.length;
+
+          const item = document.createElement('div');
+          item.className = itemClassName;
+          const rot = ((Math.random() - 0.5) * 16).toFixed(1);
+          item.style.setProperty('--trail-rot', rot + 'deg');
+          item.style.left = x + 'px';
+          item.style.top = y + 'px';
+
+          const img = document.createElement('img');
+          img.src = photoSrc;
+          img.alt = 'Wedding Moment';
+          img.draggable = false;
+          item.appendChild(img);
+
+          layerEl.appendChild(item);
+
+          let cleaned = false;
+          const cleanup = () => {
+            if (cleaned) return;
+            cleaned = true;
+            if (item.parentNode === layerEl) {
+              layerEl.removeChild(item);
+            }
+          };
+
+          item.addEventListener('animationend', cleanup, { once: true });
+          setTimeout(cleanup, 950);
+        }
+
+        window.addEventListener('pointermove', (e) => {
+          spawn(e.clientX, e.clientY);
+        }, { passive: true });
+
+        sectionEl.addEventListener('pointerleave', () => {
+          lastX = -999;
+          lastY = -999;
+        }, { passive: true });
+      }
+
+      // Quote Section: Behind text
+      createTrailHandler(
+        document.getElementById('quoteSection'),
+        document.getElementById('quoteTrailLayer'),
+        'quote-trail-item',
+        46
+      );
+
+      // CTA Section: Normal (in front / cursor level)
+      createTrailHandler(
+        document.getElementById('ctaSection'),
+        document.getElementById('ctaTrailLayer'),
+        'cta-trail-item',
+        46
+      );
+    })();
+  </script>
+
+  <!-- Universal Scroll Observers: Lately Ascending, The Approach Slide-In, General Fade-Slide-Ups -->
+  <script>
+    (function () {
+      /* 1. Button reveal observer */
+      const btnObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); btnObs.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      document.querySelectorAll('.btn-reveal').forEach(el => btnObs.observe(el));
+
+      /* 2.5 3D Scroll-Driven Stacking & 3D Card Flip to Final Letter Form for #approachSection */
+      (function init3DApproachScroll() {
+        const approachSec = document.getElementById('approachSection');
+        if (!approachSec) return;
+
+        const stage = approachSec.querySelector('.approach-3d-stage');
+        const flipper = document.getElementById('approach3DFlipper');
+        const flipperFront = approachSec.querySelector('.flipper-front');
+        const flipperBack = approachSec.querySelector('.flipper-back');
+        const step1 = approachSec.querySelector('.step-1');
+        const step2 = approachSec.querySelector('.step-2');
+        const step3 = approachSec.querySelector('.step-3');
+        const finalLetter = document.getElementById('approachFinalLetter');
+
+        if (!stage || !flipper || !step1 || !step2 || !step3 || !finalLetter) return;
+
+        function updateApproachStack() {
+          if (window.innerWidth <= 768) {
+            flipper.style.transform = '';
+            if (flipperFront) { flipperFront.style.opacity = '1'; flipperFront.style.visibility = 'visible'; }
+            if (flipperBack) { flipperBack.style.opacity = '1'; flipperBack.style.visibility = 'visible'; flipperBack.style.pointerEvents = 'auto'; }
+            step1.style.transform = ''; step1.style.opacity = '1';
+            step2.style.transform = ''; step2.style.opacity = '1';
+            step3.style.transform = ''; step3.style.opacity = '1';
+            finalLetter.style.transform = ''; finalLetter.style.opacity = '1'; finalLetter.style.pointerEvents = 'auto';
+            return;
+          }
+
+          const rect = approachSec.getBoundingClientRect();
+          const totalH = approachSec.offsetHeight - window.innerHeight;
+          if (totalH <= 0) return;
+
+          const p = Math.max(0, Math.min(1, -rect.top / totalH));
+          const stageWidth = stage.offsetWidth || 1140;
+          const colDist = stageWidth / 3 + 12;
+
+          if (p < 0.35) {
+            // Phase 1: 3 cards converge from 3 columns into 1 central stack
+            const stackP = Math.min(1, p / 0.35);
+
+            const offsetX1 = ((1 - stackP) * colDist).toFixed(1);
+            const offsetX3 = (-(1 - stackP) * colDist).toFixed(1);
+
+            step1.style.transform = `translate3d(${offsetX1}px, ${stackP * -10}px, ${stackP * -40}px) rotate(${(1 - stackP) * -3}deg) scale(${1 - stackP * 0.04})`;
+            step1.style.opacity = '1';
+
+            step2.style.transform = `translate3d(0px, ${stackP * -5}px, ${stackP * -20}px) rotate(0deg) scale(${1 - stackP * 0.02})`;
+            step2.style.opacity = '1';
+
+            step3.style.transform = `translate3d(${offsetX3}px, 0px, 0px) rotate(${(1 - stackP) * 3}deg) scale(1)`;
+            step3.style.opacity = '1';
+
+            flipper.style.transform = 'rotateY(0deg)';
+
+            // HARD HIDE BACK FACE completely during phase 1 (stacking)!
+            if (flipperFront) {
+              flipperFront.style.opacity = '1';
+              flipperFront.style.visibility = 'visible';
+            }
+            if (flipperBack) {
+              flipperBack.style.opacity = '0';
+              flipperBack.style.visibility = 'hidden';
+              flipperBack.style.pointerEvents = 'none';
+            }
+          } else {
+            // Phase 2: Card stack FLIPS 180° in 3D to reveal the Letter Contact Form!
+            step1.style.transform = `translate3d(0px, -10px, -40px) rotate(0deg) scale(0.96)`;
+            step1.style.opacity = '1';
+
+            step2.style.transform = `translate3d(0px, -5px, -20px) rotate(0deg) scale(0.98)`;
+            step2.style.opacity = '1';
+
+            step3.style.transform = `translate3d(0px, 0px, 0px) rotate(0deg) scale(1)`;
+            step3.style.opacity = '1';
+
+            const flipP = (p - 0.35) / 0.65;
+            const flipAngle = flipP * 180;
+
+            flipper.style.transform = `rotateY(${flipAngle.toFixed(2)}deg)`;
+
+            // Strictly toggle visibility & opacity at 90° flip angle threshold!
+            if (flipAngle < 90) {
+              // First half of flip: Stacked cards visible, letter form hidden
+              if (flipperFront) {
+                flipperFront.style.opacity = '1';
+                flipperFront.style.visibility = 'visible';
+              }
+              if (flipperBack) {
+                flipperBack.style.opacity = '0';
+                flipperBack.style.visibility = 'hidden';
+                flipperBack.style.pointerEvents = 'none';
+              }
+            } else {
+              // Second half of flip & finished flip (180°):
+              // Front cards 100% HIDDEN, ONLY 1 LETTER FORM VISIBLE!
+              if (flipperFront) {
+                flipperFront.style.opacity = '0';
+                flipperFront.style.visibility = 'hidden';
+              }
+              if (flipperBack) {
+                flipperBack.style.opacity = '1';
+                flipperBack.style.visibility = 'visible';
+                flipperBack.style.pointerEvents = flipP > 0.85 ? 'auto' : 'none';
+              }
+            }
+          }
+        }
+
+        window.addEventListener('scroll', updateApproachStack, { passive: true });
+        window.addEventListener('resize', updateApproachStack, { passive: true });
+        updateApproachStack();
+      })();
+
+      /* 3. The Approach Letter Contact Form Handler */
+      (function initApproachLetterForm() {
+        const btn = document.getElementById('writeToMeBtn');
+        const wrapper = document.getElementById('letterContactFormWrapper');
+        const form = document.getElementById('approachLetterForm');
+        const successBox = document.getElementById('approachFormSuccess');
+        const letterPaper = document.getElementById('approachFinalLetter');
+
+        if (btn && wrapper) {
+          btn.addEventListener('click', function () {
+            if (wrapper.style.display === 'none' || !wrapper.style.display) {
+              wrapper.style.display = 'block';
+              requestAnimationFrame(() => {
+                wrapper.style.opacity = '1';
+              });
+              if (letterPaper) {
+                letterPaper.style.maxHeight = 'none';
+              }
+              btn.style.display = 'none';
+              const firstInput = wrapper.querySelector('input');
+              if (firstInput) firstInput.focus();
+            }
+          });
+        }
+
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = form.querySelector('[name="fullName"]')?.value || '';
+            const phone = form.querySelector('[name="phone"]')?.value || '';
+            const email = form.querySelector('[name="email"]')?.value || '';
+            const details = form.querySelector('[name="details"]')?.value || '';
+            const date = form.querySelector('[name="weddingDate"]')?.value || '';
+            const loc = form.querySelector('[name="weddingLocation"]')?.value || '';
+
+            if (!name || !phone || !email || !details) return;
+
+            const subject = encodeURIComponent('New Letter Inquiry — ' + name);
+            const bodyText = encodeURIComponent(
+              `Dear Uriel,\n\nName(s): ${name}\nPhone: ${phone}\nEmail: ${email}\nWedding Date/Season: ${date}\nLocation/Venue: ${loc}\n\nDetails:\n${details}\n\n---\nSent via Thyzfoto Letter Form`
+            );
+            const mailtoUrl = `mailto:thyzfoto@gmail.com?subject=${subject}&body=${bodyText}`;
+
+            if (successBox) {
+              form.style.display = 'none';
+              successBox.style.display = 'block';
+            }
+
+            setTimeout(() => {
+              window.location.href = mailtoUrl;
+            }, 300);
+          });
+        }
+      })();
+
+
+
+      /* Dynamic Letter Date based on visitor's timezone location */
+      (function updateLetterDate() {
+        const els = document.querySelectorAll('#dynamicLetterDate, .approachLetterDate');
+        if (!els.length) return;
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const romanMonths = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+        const monthRoman = romanMonths[now.getMonth()];
+        const year = now.getFullYear();
+        els.forEach(el => {
+          el.textContent = `${day} · ${monthRoman} · ${year}`;
+        });
+      })();
+
+      /* 4. Universal fade-slide-up observer for headings, quotes, CTA, footer */
+      const fadeEls = document.querySelectorAll('.fade-slide-up');
+      if (fadeEls.length) {
+        const fadeObs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              fadeObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+        fadeEls.forEach(el => fadeObs.observe(el));
+      }
+    })();
+  </script>
+  <!-- Chatway Live Chat Widget -->
+  <script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=iTTierp448Sy"></script>
+</body>
+
+</html>

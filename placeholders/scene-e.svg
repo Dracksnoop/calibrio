@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="ge-bg" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#3a2418"></stop>
+      <stop offset="60%" stop-color="#1a0f08"></stop>
+      <stop offset="100%" stop-color="#080502"></stop>
+    </linearGradient>
+    <radialGradient id="ge-spot" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#ffd890" stop-opacity="0.5"></stop>
+      <stop offset="50%" stop-color="#c88848" stop-opacity="0.2"></stop>
+      <stop offset="100%" stop-color="#c88848" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="ge-motion">
+      <feGaussianBlur stdDeviation="4 0.5"></feGaussianBlur>
+    </filter>
+    <filter id="ge-bokeh"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#ge-bg)"></rect>
+  <rect width="600" height="800" fill="url(#ge-spot)"></rect>
+  
+  <g filter="url(#ge-bokeh)" opacity="0.85">
+    <circle cx="80" cy="120" r="25" fill="#ffd28c"></circle>
+    <circle cx="180" cy="80" r="30" fill="#ffe0a8"></circle>
+    <circle cx="350" cy="60" r="22" fill="#ffd28c"></circle>
+    <circle cx="500" cy="140" r="35" fill="#ffe0a8"></circle>
+    <circle cx="540" cy="320" r="28" fill="#ffd28c"></circle>
+    <circle cx="60" cy="280" r="26" fill="#ffe0a8"></circle>
+  </g>
+  
+  <g transform="translate(280 420)" filter="url(#ge-motion)">
+    
+    <path d="M -40 -60 Q -60 -20 -80 60 Q -100 180 -60 280 L 60 280 Q 80 180 60 60 Q 40 -20 20 -60 Z" fill="#e8d8c2" opacity="0.9"></path>
+    
+    <ellipse cx="-15" cy="-90" rx="13" ry="16" fill="#1a0f08"></ellipse>
+    <ellipse cx="15" cy="-95" rx="14" ry="17" fill="#1a0f08"></ellipse>
+    
+    <path d="M -5 -75 Q 15 -65 40 -60 L 40 60 L -5 60 Z" fill="#1a0f08"></path>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+# Thyzfoto
+# Robots policy
+
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+
+Sitemap: http://flow.colibrisocialclub.com/sitemap.xml

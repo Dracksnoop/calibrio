@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="gc-bg" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#5a3a28"></stop>
+      <stop offset="50%" stop-color="#2a1a10"></stop>
+      <stop offset="100%" stop-color="#0a0604"></stop>
+    </radialGradient>
+    <radialGradient id="gc-flame" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff0c8" stop-opacity="1"></stop>
+      <stop offset="30%" stop-color="#ffb868" stop-opacity="0.7"></stop>
+      <stop offset="100%" stop-color="#ff8830" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="gc-blur"><feGaussianBlur stdDeviation="8"></feGaussianBlur></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#gc-bg)"></rect>
+  
+  <g filter="url(#gc-blur)">
+    <circle cx="120" cy="180" r="60" fill="url(#gc-flame)"></circle>
+    <circle cx="480" cy="100" r="80" fill="url(#gc-flame)"></circle>
+    <circle cx="540" cy="500" r="50" fill="url(#gc-flame)"></circle>
+    <circle cx="80" cy="640" r="70" fill="url(#gc-flame)"></circle>
+    <circle cx="320" cy="730" r="40" fill="url(#gc-flame)" opacity="0.6"></circle>
+  </g>
+  
+  <g transform="translate(180 380)" opacity="0.92">
+    
+    <path d="M 0 120 Q 20 60 80 40 Q 140 20 200 50 Q 230 80 240 120 L 240 200 Q 200 220 120 220 Q 40 220 0 200 Z" fill="#b89478"></path>
+    
+    <path d="M 30 80 Q 60 30 120 20 Q 180 10 220 40 L 220 110 Q 180 130 120 130 Q 60 130 30 110 Z" fill="#cfa890" opacity="0.92"></path>
+    
+    <circle cx="135" cy="75" r="3.5" fill="#fff5dc"></circle>
+  </g>
+  
+  <rect width="600" height="800" fill="black" opacity="0.18" style="mix-blend-mode:multiply"></rect>
+</svg>

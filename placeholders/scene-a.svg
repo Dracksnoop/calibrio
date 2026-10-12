@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="ga-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4d9b8"></stop>
+      <stop offset="40%" stop-color="#e8b988"></stop>
+      <stop offset="80%" stop-color="#a8826a"></stop>
+      <stop offset="100%" stop-color="#5a4438"></stop>
+    </linearGradient>
+    <radialGradient id="ga-sun" cx="0.62" cy="0.38" r="0.4">
+      <stop offset="0%" stop-color="#fff5e0" stop-opacity="0.95"></stop>
+      <stop offset="40%" stop-color="#ffd9a0" stop-opacity="0.5"></stop>
+      <stop offset="100%" stop-color="#ffd9a0" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="ga-blur"><feGaussianBlur stdDeviation="3"></feGaussianBlur></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#ga-sky)"></rect>
+  <rect width="600" height="800" fill="url(#ga-sun)"></rect>
+  
+  <path d="M0 580 Q 150 560 300 575 T 600 570 L 600 800 L 0 800 Z" fill="#3a2c22" opacity="0.7"></path>
+  <path d="M0 620 Q 200 610 400 625 T 600 615 L 600 800 L 0 800 Z" fill="#241a14" opacity="0.85"></path>
+  
+  <g transform="translate(290 480)" filter="url(#ga-blur)">
+    
+    <ellipse cx="-22" cy="-50" rx="14" ry="18" fill="#0e0a07"></ellipse>
+    <path d="M -45 -38 Q -22 -28 0 -34 L 0 130 L -55 130 Q -60 70 -52 0 Z" fill="#0e0a07"></path>
+    
+    <ellipse cx="22" cy="-58" rx="15" ry="19" fill="#0e0a07"></ellipse>
+    <path d="M 5 -40 Q 22 -32 48 -38 Q 55 -10 50 130 L 0 130 L 0 -34 Z" fill="#0e0a07"></path>
+  </g>
+  
+  <rect width="600" height="800" fill="url(#noise)" opacity="0.04"></rect>
+</svg>
