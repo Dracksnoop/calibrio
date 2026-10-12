@@ -342,6 +342,10 @@
       align-items: center;
       justify-content: center;
       perspective: 1400px;
+      /* The paper and its keepsakes shrink together to fit short browser windows, so the
+         letterhead and the wax seal are never cut off. --letter-fit is set by the scroller script. */
+      transform: scale(var(--letter-fit, 1));
+      transform-origin: center center;
     }
 
     /* Standard A4 Paper Sheet Ratio (1 : 1.414) - Prominent, Crisp Web Presence */
@@ -3534,6 +3538,21 @@
       ].filter(i => i.el !== null);
 
       if (!container || !paper) return;
+
+      // The stage is pinned to one screen height. On short windows (a 1366x768 monitor leaves
+      // about 620px) the full-size paper would be cut off top and bottom, so scale the whole
+      // composition down until the paper fits with a little desk showing around it.
+      const stage = document.getElementById('letterStage');
+      function fitLetter() {
+        if (!stage) return;
+        const full = paper.offsetHeight * 1.02; // the paper at the end of its approach
+        const room = window.innerHeight - 40;   // 20px of desk above and below
+        const fit = Math.max(0.5, Math.min(1, room / full));
+        stage.style.setProperty('--letter-fit', fit.toFixed(3));
+      }
+      fitLetter();
+      window.addEventListener('resize', fitLetter, { passive: true });
+      window.addEventListener('load', fitLetter);
 
       if (reduceMotion) {
         paper.style.opacity = '1';
