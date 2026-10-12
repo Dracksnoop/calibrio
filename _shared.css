@@ -353,17 +353,18 @@ image-slot { display: block; }
 .mobile-sub-nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   padding-left: 14px;
-  margin-top: 4px;
+  margin-top: 2px;
 }
+/* Wedding / Engagement: the same face as the rest of the menu, one step smaller as sub-items */
 .mobile-sub-link {
-  font-family: var(--font-sans) !important;
-  font-size: 13px !important;
-  font-style: normal !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-  color: var(--smoke, #665a52) !important;
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-size: 24px !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: var(--ink) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
