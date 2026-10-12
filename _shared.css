@@ -769,14 +769,13 @@ image-slot { display: block; }
 
 .journal-featured {
   display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px;
-  align-items: center; cursor: pointer; margin-bottom: 96px;
+  align-items: center; margin-bottom: 96px;
 }
 .journal-featured .frame { position: relative; overflow: hidden; border-radius: 8px; background: var(--ink); }
 .journal-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px 32px;
   align-items: start;
 }
-.journal-card { cursor: pointer; }
 .journal-card .frame { margin-bottom: 24px; position: relative; overflow: hidden; border-radius: 8px; background: var(--ink); }
 .journal-featured .frame image-slot,
 .journal-card .frame image-slot {
