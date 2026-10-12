@@ -3,13 +3,8 @@
 (function () {
   'use strict';
 
-  // The album and the photo viewer can be open on top of each other, so the page scroll
-  // lock is counted and the Escape key only ever closes the top layer.
-  let scrollLocks = 0;
-  const lockScroll = () => { if (++scrollLocks === 1) document.body.style.overflow = 'hidden'; };
-  const unlockScroll = () => { if (scrollLocks > 0 && --scrollLocks === 0) document.body.style.overflow = ''; };
-  let escHandledBy = null; // the keydown event the photo viewer already consumed
-  const lightboxIsOpen = () => !!document.querySelector('.lightbox.is-open');
+  const lockScroll = () => { document.body.style.overflow = 'hidden'; };
+  const unlockScroll = () => { document.body.style.overflow = ''; };
 
   const nav = document.querySelector('.nav');
   const burger = document.querySelector('.nav-burger');
@@ -196,7 +191,7 @@
 
       document.addEventListener('keydown', (e) => {
         if (!box.classList.contains('is-open')) return;
-        if (e.key === 'Escape') { escHandledBy = e; close(); }
+        if (e.key === 'Escape') close();
         else if (e.key === 'ArrowRight') show(index + 1);
         else if (e.key === 'ArrowLeft') show(index - 1);
         else if (e.key === 'Tab') {
@@ -245,7 +240,7 @@
       if (lastFocus) lastFocus.focus({ preventScroll: true });
     }
 
-    // Delegated, so grids filled in later (an opened album) work too.
+    // Delegated, so it covers every [data-lightbox] grid on the page.
     document.addEventListener('click', (e) => {
       const link = e.target.closest ? e.target.closest('[data-lightbox] a[href]') : null;
       if (!link) return;
@@ -253,84 +248,6 @@
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       e.preventDefault();
       open(link.closest('[data-lightbox]'), link);
-    });
-  }
-
-  // ==========================================================================
-  // Albums: a [data-album="id"] card opens the photographs kept in
-  // <template id="album-id" data-tag data-title> inside one shared panel.
-  // ==========================================================================
-  function initAlbums() {
-    const cards = document.querySelectorAll('[data-album]');
-    if (!cards.length) return;
-
-    let modal = null, tagEl = null, titleEl = null, gridEl = null, bodyEl = null, closeBtn = null;
-    let lastCard = null;
-
-    function build() {
-      modal = document.createElement('div');
-      modal.className = 'album-modal';
-      modal.setAttribute('role', 'dialog');
-      modal.setAttribute('aria-modal', 'true');
-      modal.setAttribute('aria-labelledby', 'albumModalTitle');
-      modal.innerHTML =
-        '<div class="album-modal-backdrop"></div>' +
-        '<div class="album-modal-panel">' +
-          '<div class="album-modal-header">' +
-            '<div><div class="album-modal-tag"></div><h2 class="album-modal-title" id="albumModalTitle"></h2></div>' +
-            '<button type="button" class="album-modal-close" aria-label="Close album">&times;</button>' +
-          '</div>' +
-          '<div class="album-modal-body"><div class="masonry" data-lightbox></div></div>' +
-        '</div>';
-      document.body.appendChild(modal);
-
-      tagEl = modal.querySelector('.album-modal-tag');
-      titleEl = modal.querySelector('.album-modal-title');
-      gridEl = modal.querySelector('.masonry');
-      bodyEl = modal.querySelector('.album-modal-body');
-      closeBtn = modal.querySelector('.album-modal-close');
-
-      closeBtn.addEventListener('click', close);
-      modal.querySelector('.album-modal-backdrop').addEventListener('click', close);
-    }
-
-    function open(card) {
-      const tpl = document.getElementById('album-' + card.dataset.album);
-      if (!tpl || !tpl.content) return;
-      if (!modal) build();
-      tagEl.textContent = tpl.dataset.tag || '';
-      titleEl.textContent = tpl.dataset.title || '';
-      gridEl.textContent = '';
-      gridEl.appendChild(tpl.content.cloneNode(true));
-      bodyEl.scrollTop = 0;
-      lastCard = card;
-      modal.classList.add('is-open');
-      lockScroll();
-      closeBtn.focus({ preventScroll: true });
-    }
-
-    function close() {
-      if (!modal || !modal.classList.contains('is-open')) return;
-      modal.classList.remove('is-open');
-      unlockScroll();
-      if (lastCard) lastCard.focus({ preventScroll: true });
-    }
-
-    cards.forEach((card) => card.addEventListener('click', () => open(card)));
-
-    document.addEventListener('keydown', (e) => {
-      if (!modal || !modal.classList.contains('is-open')) return;
-      // a photo opened from the album sits on top and owns the keyboard until it closes
-      if (escHandledBy === e || lightboxIsOpen()) return;
-      if (e.key === 'Escape') {
-        close();
-      } else if (e.key === 'Tab') {
-        const focusable = [closeBtn].concat(Array.from(gridEl.querySelectorAll('a[href]')));
-        const first = focusable[0], last = focusable[focusable.length - 1];
-        if (!modal.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
-        else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
     });
   }
 
@@ -368,12 +285,10 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initLightbox();
-      initAlbums();
       initScrollToTop();
     });
   } else {
     initLightbox();
-    initAlbums();
     initScrollToTop();
   }
 
