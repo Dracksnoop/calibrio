@@ -2323,6 +2323,16 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.95);
     }
 
+    .approach-photo-frame {
+      width: 100%;
+      height: clamp(155px, 20vh, 190px);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(44, 31, 24, 0.1);
+      flex-shrink: 0;
+    }
+
     /* Final Letter Card (Back Face of 3D Flip Card) */
     .final-approach-letter {
       position: relative;
@@ -2412,32 +2422,23 @@
       }
     }
 
-    /* Approach photo: the photograph keeps its own proportions, no cropping frame.
-       On desktop the cards sit in a pinned 100vh stage, so the photo is capped by height. */
+    /* Approach photo frame — one uniform landscape frame on all three cards (as on the
+       original site), so the cards match. The photo fills the frame. */
     .approach-photo-frame {
       width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
       margin-bottom: 20px;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
+      box-shadow: 0 4px 14px rgba(44, 31, 24, 0.1);
     }
 
     .approach-photo-frame image-slot,
     .approach-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: clamp(200px, 30vh, 260px);
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(44, 31, 24, 0.1);
-    }
-
-    @media (max-width: 768px) {
-      .approach-photo-frame img {
-        width: 100%;
-        max-height: none;
-      }
     }
 
     /* ================= Gallery Section (masonry, photos at their own proportions) ================= */
