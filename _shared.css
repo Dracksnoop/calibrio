@@ -1132,13 +1132,13 @@ div[id*="chatway"]:not([style*="height: 100%"]):not([class*="expanded"]):hover {
 
 /* Gallery page header */
 .gallery-head { padding: 56px 0 28px; }
-.gallery-head .crumbs {
+.crumbs {
   font-family: var(--font-sans); font-size: 11px;
   letter-spacing: 0.26em; text-transform: uppercase; color: var(--smoke);
 }
-.gallery-head .crumbs a { border-bottom: 1px solid var(--hairline-2); padding-bottom: 2px; }
-.gallery-head .crumbs a:hover { color: var(--carmine); border-bottom-color: var(--carmine); }
-.gallery-head .crumbs .sep { margin: 0 10px; opacity: 0.6; }
+.crumbs a { border-bottom: 1px solid var(--hairline-2); padding-bottom: 2px; }
+.crumbs a:hover { color: var(--carmine); border-bottom-color: var(--carmine); }
+.crumbs .sep { margin: 0 10px; opacity: 0.6; }
 /* Section heading + description, as on the original portfolio */
 .category-heading {
   font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
@@ -1154,6 +1154,54 @@ div[id*="chatway"]:not([style*="height: 100%"]):not([class*="expanded"]):hover {
 }
 .gallery-head .category-heading { margin-top: 20px; }
 .gallery-wrap { padding: 0 0 96px; }
+
+/* Gallery hero — one large photograph under the bar, with the page title on it.
+   --hero-focus says which part of the photo to keep when the banner crops it. */
+.gallery-hero {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center;
+  height: clamp(380px, 74vh, 780px);
+  background: var(--ink); color: var(--cream);
+}
+.gallery-hero img {
+  position: absolute; inset: 0;
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: var(--hero-focus, 50% 50%);
+}
+/* veil, heavier on the left where the title sits */
+.gallery-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(20, 13, 8, 0.62) 0%, rgba(20, 13, 8, 0.30) 46%, rgba(20, 13, 8, 0.12) 100%);
+  pointer-events: none;
+}
+.gallery-hero-inner { position: relative; z-index: 2; width: 100%; }
+.gallery-hero .crumbs { color: rgba(241, 234, 220, 0.86); }
+.gallery-hero .crumbs a { border-bottom-color: rgba(241, 234, 220, 0.5); }
+.gallery-hero .crumbs a:hover { color: #fff; border-bottom-color: #fff; }
+.gallery-hero .category-heading {
+  color: var(--cream);
+  margin: 18px 0 10px;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+}
+.gallery-hero .category-sub {
+  color: rgba(241, 234, 220, 0.92);
+  max-width: 460px;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+}
+.gallery-hero + .gallery-wrap { padding-top: 56px; }
+@media (min-width: 861px) {
+  /* the desktop bar is 20px taller than its spacer; start the photo below it */
+  .gallery-hero { margin-top: 20px; }
+}
+@media (max-width: 860px) {
+  .gallery-hero { height: clamp(320px, 64vh, 560px); }
+  .gallery-hero::after {
+    background: linear-gradient(180deg, rgba(20, 13, 8, 0.30) 0%, rgba(20, 13, 8, 0.18) 40%, rgba(20, 13, 8, 0.62) 100%);
+  }
+  .gallery-hero { align-items: flex-end; }
+  .gallery-hero-inner { padding-bottom: 32px; }
+  .gallery-hero + .gallery-wrap { padding-top: 32px; }
+}
 
 /* Closing link tiles under a gallery */
 .link-tiles {
