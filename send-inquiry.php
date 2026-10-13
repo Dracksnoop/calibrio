@@ -51,7 +51,6 @@ $fields = [
     'Day type' => form_value('eventType'),
     'Ideal budget' => form_value('budget'),
     'What speaks to them' => form_value('speaks'),
-    'Perfect weather' => form_value('funAnswer'),
     'Heard about you from' => form_value('heardAbout'),
     'Details' => form_value('details'),
 ];
