@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="../../../logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../_shared.css?v=hostinger_v112">
+  <link rel="stylesheet" href="../../../_shared.css?v=hostinger_v113">
 
   <script type="application/ld+json">
   {
@@ -69,7 +69,8 @@
   }
   </script>
 
-  <script src="../../../_shared.js?v=hostinger_v112" defer></script>
+  <script>document.documentElement.classList.add('js-anim');setTimeout(function(){if(!window.__thyzReveal)document.documentElement.classList.remove('js-anim');},3000);</script>
+  <script src="../../../_shared.js?v=hostinger_v113" defer></script>
 </head>
 <body class="portfolio-page">
 
@@ -114,17 +115,11 @@
   <div class="nav-spacer"></div>
 
   <main>
-    <header class="gallery-head is-centered">
-      <div class="container">
-        <div class="crumbs"><a href="../../">Portfolio</a><span class="sep">/</span><a href="../">Weddings</a></div>
-        <h1 class="category-heading"><em>Angie &amp; Christian</em></h1>
-        <p class="category-sub">St. Patrick&#x27;s Cathedral &amp; Manhattan, New York</p>
-      </div>
-    </header>
+    <!-- The gallery opens straight into the photographs; the title is kept for screen readers and search only. -->
+    <h1 class="sr-only">Angie &amp; Christian</h1>
 
-    <section class="gallery-wrap">
+    <section class="gallery-wrap is-bare">
       <div class="container">
-        <!-- Every photograph is shown at its own proportions; tap or click for the full frame. -->
         <div class="masonry" data-lightbox>
           <a class="masonry-item" href="../../../images/angie_christian/0I7A1669.jpg">
             <img src="../../../images/angie_christian/0I7A1669.jpg" width="2000" height="3000" alt="Angie &amp; Christian — wedding portraits, New York" loading="eager" decoding="async">
@@ -164,20 +159,52 @@
           </a>
         </div>
 
-        <nav class="link-tiles" aria-label="More albums">
-          <a class="link-tile" href="../lola-sam/">
-            <span class="t">Lola &amp; Sam</span>
-            <span class="s">← Previous album</span>
-          </a>
-          <a class="link-tile" href="../">
-            <span class="t">Weddings</span>
-            <span class="s">All albums</span>
-          </a>
-          <a class="link-tile" href="../our-elopement/">
-            <span class="t">Our Elopement</span>
-            <span class="s">Next album →</span>
-          </a>
+        <nav class="gallery-pager" aria-label="More albums">
+          <a class="prev" href="../lola-sam/" aria-label="Previous album: Lola &amp; Sam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg></a>
+          <a class="next" href="../our-elopement/" aria-label="Next album: Our Elopement"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg></a>
         </nav>
+      </div>
+    </section>
+
+    <section class="gallery-contact" aria-label="Write to me">
+      <div class="container narrow">
+        <div class="eyebrow-row">
+          <span class="dot"></span>
+          <span class="eyebrow lbl">WRITE TO ME</span>
+        </div>
+        <form class="inquire-form" method="POST" action="../../../send-inquiry.php" novalidate>
+          <input type="hidden" name="_subject" value="New wedding inquiry — Thyzfoto">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="gcName">FULL NAME <span class="req">*</span></label>
+              <input id="gcName" name="fullName" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="gcEmail">EMAIL <span class="req">*</span></label>
+              <input id="gcEmail" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="gcPhone">PHONE NUMBER <span class="req">*</span></label>
+              <input id="gcPhone" name="phone" type="tel" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="gcDate">WEDDING DATE</label>
+              <input id="gcDate" name="weddingDate" type="text">
+            </div>
+            <div class="field full">
+              <label for="gcDetails">TELL ME EVERYTHING <span class="req">*</span></label>
+              <textarea id="gcDetails" name="details" rows="4" required></textarea>
+            </div>
+
+            <div class="form-foot">
+              <button type="submit" class="btn btn-primary" disabled style="opacity:0.6;cursor:not-allowed;background:var(--smoke)">
+                Send my note <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
@@ -202,10 +229,6 @@
             <a href="../../../portfolio/engagements/">Engagement →</a>
             <a href="../../../journal/">Journal →</a>
           </div>
-        </div>
-        <div>
-          <div class="footer-col-eyebrow">PRACTICE</div>
-          <div class="footer-list"><a href="../../../about/">About →</a><a href="../../../investment/">Investment →</a></div>
         </div>
         <div>
           <div class="footer-col-eyebrow">ELSEWHERE</div>

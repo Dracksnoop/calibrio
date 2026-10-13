@@ -320,6 +320,8 @@
     function open(grid, link) {
       if (!box) build();
       items = Array.from(grid.querySelectorAll('a[href]'));
+      // dealt galleries sit column by column in the page; step through them in album order
+      if (items.length && items[0].dataset.order !== undefined) items.sort((a, b) => a.dataset.order - b.dataset.order);
       lastFocus = link;
       show(Math.max(0, items.indexOf(link)));
       box.classList.add('is-open');
@@ -343,6 +345,69 @@
       e.preventDefault();
       open(link.closest('[data-lightbox]'), link);
     });
+  }
+
+  // ==========================================================================
+  // Gallery layout: deal the photographs into real columns, always into the shortest
+  // one, using the width/height each <img> declares (no waiting for images to load).
+  // The number of columns comes from the stylesheet (--cols), so it follows the breakpoints.
+  // ==========================================================================
+  function initGalleryColumns() {
+    document.querySelectorAll('.portfolio-page .masonry').forEach((grid) => {
+      const items = Array.from(grid.querySelectorAll('.masonry-item'));
+      if (!items.length) return;
+      items.forEach((el, i) => { el.dataset.order = i; });
+      let current = 0;
+      const deal = () => {
+        const n = parseInt(getComputedStyle(grid).getPropertyValue('--cols'), 10) || 3;
+        if (n === current) return;
+        current = n;
+        const cols = [];
+        const heights = [];
+        for (let c = 0; c < n; c++) { const col = document.createElement('div'); col.className = 'masonry-col'; cols.push(col); heights.push(0); }
+        items.forEach((el) => {
+          const img = el.querySelector('img');
+          const w = Number(img && img.getAttribute('width')) || 2;
+          const h = Number(img && img.getAttribute('height')) || 3;
+          let k = 0;
+          for (let c = 1; c < n; c++) if (heights[c] < heights[k] - 0.001) k = c;
+          cols[k].appendChild(el);
+          heights[k] += h / w + 0.04; // + roughly one gap
+        });
+        grid.textContent = '';
+        cols.forEach((col) => grid.appendChild(col));
+        grid.classList.add('is-dealt');
+      };
+      deal();
+      window.addEventListener('resize', deal, { passive: true });
+    });
+  }
+
+  // ==========================================================================
+  // Fade gallery tiles and photographs in as they scroll into view. Pages opt in by
+  // setting html.js-anim in <head>; that inline script waits for the flag below and
+  // drops the class again if this file never ran, so content can't stay hidden.
+  // ==========================================================================
+  function initGalleryReveal() {
+    window.__thyzReveal = true;
+    const items = document.querySelectorAll('.album-card, .portfolio-page .masonry-item');
+    if (!items.length) return;
+    const show = (el) => el.classList.add('is-in');
+    if (!('IntersectionObserver' in window) || !document.documentElement.classList.contains('js-anim')) {
+      items.forEach(show);
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      let n = 0;
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        // items arriving together come in one after another, not as a block
+        entry.target.style.transitionDelay = (Math.min(n++, 7) * 80) + 'ms';
+        show(entry.target);
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -5% 0px', threshold: 0.04 });
+    items.forEach((el) => io.observe(el));
   }
 
   // ==========================================================================
@@ -379,10 +444,14 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initLightbox();
+      initGalleryColumns();
+      initGalleryReveal();
       initScrollToTop();
     });
   } else {
     initLightbox();
+    initGalleryColumns();
+    initGalleryReveal();
     initScrollToTop();
   }
 

@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-  <link rel="stylesheet" href="_shared.css?v=hostinger_v112">
+  <link rel="stylesheet" href="_shared.css?v=hostinger_v113">
   <script>document.documentElement.classList.add('js-anim');</script>
 
   <style>
@@ -1156,6 +1156,35 @@
         #150a05;
       isolation: isolate;
       padding: clamp(16px, 2.5vh, 28px) 24px;
+    }
+
+    /* Backdrop photograph behind the letters: softened, then veiled in the section's own
+       warm brown so the cream letter stays the brightest thing on screen. */
+    .reviews-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .reviews-backdrop img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: saturate(0.9) blur(1.5px);
+      transform: scale(1.03);
+    }
+
+    .reviews-backdrop::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 62% at 50% 52%, rgba(21, 10, 5, 0.50) 0%, rgba(21, 10, 5, 0.80) 100%),
+        linear-gradient(180deg, rgba(21, 10, 5, 0.55) 0%, rgba(21, 10, 5, 0.20) 30%, rgba(21, 10, 5, 0.20) 70%, rgba(21, 10, 5, 0.62) 100%);
     }
 
     /* Ambient central gold/amber glow */
@@ -3184,6 +3213,10 @@
   <section class="reviews-pinned-container" id="reviewsContainer" aria-label="Reviews from couples">
     <div class="reviews-sticky-viewport" id="reviewsViewport">
 
+      <!-- Backdrop photograph, dimmed so the letters stay the focus -->
+      <div class="reviews-backdrop" aria-hidden="true">
+        <img src="images/gallery/gallery_052.jpg" width="2560" height="1707" alt="" loading="lazy" decoding="async">
+      </div>
       <div class="reviews-aura" aria-hidden="true"></div>
 
       <!-- Header -->
@@ -3203,7 +3236,6 @@
             <div class="sheet-head">
               <div class="sheet-dispatch">
                 <span class="sheet-badge">ARCHIVE LETTER № 01</span>
-                <span class="sheet-folio">FOLIO / HUDSON VALLEY</span>
               </div>
               <div class="sheet-stamp" aria-hidden="true">
                 <div class="stamp-inner">
@@ -3220,17 +3252,6 @@
                 the photographs arrived and we remembered everything.&rdquo;
               </blockquote>
             </div>
-            <div class="sheet-foot">
-              <div class="sheet-location">
-                <span class="pin-symbol">📍</span> Hudson Valley, New York
-              </div>
-              <div class="sheet-signoff">
-                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
-                <div class="mini-seal" aria-hidden="true">
-                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
-                </div>
-              </div>
-            </div>
             <div class="sheet-turn-shadow" aria-hidden="true"></div>
           </div>
         </article>
@@ -3242,7 +3263,6 @@
             <div class="sheet-head">
               <div class="sheet-dispatch">
                 <span class="sheet-badge">ARCHIVE LETTER № 02</span>
-                <span class="sheet-folio">FOLIO / BROOKLYN RECEPTION</span>
               </div>
               <div class="sheet-stamp" aria-hidden="true">
                 <div class="stamp-inner">
@@ -3259,17 +3279,6 @@
                 rushed&ensp;&mdash;&ensp;just the day, exactly as it felt.&rdquo;
               </blockquote>
             </div>
-            <div class="sheet-foot">
-              <div class="sheet-location">
-                <span class="pin-symbol">📍</span> Brooklyn, New York
-              </div>
-              <div class="sheet-signoff">
-                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
-                <div class="mini-seal" aria-hidden="true">
-                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
-                </div>
-              </div>
-            </div>
             <div class="sheet-turn-shadow" aria-hidden="true"></div>
           </div>
         </article>
@@ -3281,7 +3290,6 @@
             <div class="sheet-head">
               <div class="sheet-dispatch">
                 <span class="sheet-badge">ARCHIVE LETTER № 03</span>
-                <span class="sheet-folio">FOLIO / TULUM DESTINATION</span>
               </div>
               <div class="sheet-stamp" aria-hidden="true">
                 <div class="stamp-inner">
@@ -3298,17 +3306,6 @@
                 camera was there. The gallery still makes us cry.&rdquo;
               </blockquote>
             </div>
-            <div class="sheet-foot">
-              <div class="sheet-location">
-                <span class="pin-symbol">📍</span> Tulum, Mexico
-              </div>
-              <div class="sheet-signoff">
-                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
-                <div class="mini-seal" aria-hidden="true">
-                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
-                </div>
-              </div>
-            </div>
             <div class="sheet-turn-shadow" aria-hidden="true"></div>
           </div>
         </article>
@@ -3320,7 +3317,6 @@
             <div class="sheet-head">
               <div class="sheet-dispatch">
                 <span class="sheet-badge">ARCHIVE LETTER № 04</span>
-                <span class="sheet-folio">FOLIO / UPSTATE HUDSON</span>
               </div>
               <div class="sheet-stamp" aria-hidden="true">
                 <div class="stamp-inner">
@@ -3337,17 +3333,6 @@
                 pressure. The photographs arrived exactly the same way.&rdquo;
               </blockquote>
             </div>
-            <div class="sheet-foot">
-              <div class="sheet-location">
-                <span class="pin-symbol">📍</span> Catskills, New York
-              </div>
-              <div class="sheet-signoff">
-                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
-                <div class="mini-seal" aria-hidden="true">
-                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
-                </div>
-              </div>
-            </div>
             <div class="sheet-turn-shadow" aria-hidden="true"></div>
           </div>
         </article>
@@ -3359,7 +3344,6 @@
             <div class="sheet-head">
               <div class="sheet-dispatch">
                 <span class="sheet-badge">ARCHIVE LETTER № 05</span>
-                <span class="sheet-folio">FOLIO / MONTAUK COASTAL</span>
               </div>
               <div class="sheet-stamp" aria-hidden="true">
                 <div class="stamp-inner">
@@ -3375,17 +3359,6 @@
                 &ldquo;Every frame feels like a page from a longer story. Our parents still ask to see the album
                 again&ensp;&mdash;&ensp;it&rsquo;s become a family object, not just photos.&rdquo;
               </blockquote>
-            </div>
-            <div class="sheet-foot">
-              <div class="sheet-location">
-                <span class="pin-symbol">📍</span> Montauk, New York
-              </div>
-              <div class="sheet-signoff">
-                <span class="sheet-verified">KEPT IN LIGHT &middot; VERIFIED DISPATCH</span>
-                <div class="mini-seal" aria-hidden="true">
-                  <img src="wax-seal.png" alt="Thyzfoto Seal" class="mini-seal-img">
-                </div>
-              </div>
             </div>
             <div class="sheet-turn-shadow" aria-hidden="true"></div>
           </div>
@@ -3501,13 +3474,6 @@
           </div>
         </div>
         <div>
-          <div class="footer-col-eyebrow">PRACTICE</div>
-          <div class="footer-list">
-            <a href="about/">About →</a>
-            <a href="investment/">Investment →</a>
-          </div>
-        </div>
-        <div>
           <div class="footer-col-eyebrow">ELSEWHERE</div>
           <div class="footer-list">
             <a href="https://www.instagram.com/thyzfoto" target="_blank" rel="noopener">Instagram →</a>
@@ -3521,7 +3487,7 @@
     </div>
   </footer>
 
-  <script src="_shared.js?v=hostinger_v112" defer></script>
+  <script src="_shared.js?v=hostinger_v113" defer></script>
 
 
   <!-- Pinned 3D Letter Scroller: Approaching on Scroll, 100% Reversible on Scroll Up -->

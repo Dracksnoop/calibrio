@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="../logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../_shared.css?v=hostinger_v112">
+  <link rel="stylesheet" href="../_shared.css?v=hostinger_v113">
 
   <script type="application/ld+json">
   {
@@ -57,7 +57,8 @@
     })();
   </script>
 
-  <script src="../_shared.js?v=hostinger_v112" defer></script>
+  <script>document.documentElement.classList.add('js-anim');setTimeout(function(){if(!window.__thyzReveal)document.documentElement.classList.remove('js-anim');},3000);</script>
+  <script src="../_shared.js?v=hostinger_v113" defer></script>
 </head>
 <body class="portfolio-page">
 
@@ -102,40 +103,19 @@
   <div class="nav-spacer"></div>
 
   <main>
-    <section class="portfolio-intro">
-      <div class="container">
-        <div class="eyebrow-row" style="margin-bottom:28px">
-          <span class="dot"></span>
-          <span class="eyebrow lbl">PORTFOLIO</span>
-        </div>
-        <h1 class="page-title" style="max-width:1100px">
-          <em>A year of days,<br>told in their own time.</em>
-        </h1>
-      </div>
-    </section>
+    <h1 class="sr-only">Portfolio</h1>
 
-    <section class="section" style="padding: 56px 0 96px">
-      <div class="container">
-        <div class="portfolio-cats">
-        <a class="portfolio-cat" href="weddings/">
-          <img src="../images/gallery/gallery_002.jpg" width="1280" height="1920" alt="Bride and groom in white embracing in a garden — wedding photography by Thyzfoto" fetchpriority="high">
-          <div class="portfolio-cat-body">
-            <h2 class="portfolio-cat-title">Weddings</h2>
-            <p class="portfolio-cat-sub">Documentary, black-tie, and intimate elopements told in their own natural light.</p>
-            <span class="portfolio-cat-cta">View the gallery →</span>
-          </div>
-        </a>
-        <a class="portfolio-cat" href="engagements/">
-          <img src="../images/our_proposal/cover.jpg" width="1600" height="2400" alt="Newly engaged couple laughing together — engagement photography by Thyzfoto" fetchpriority="high">
-          <div class="portfolio-cat-body">
-            <h2 class="portfolio-cat-title">Engagements</h2>
-            <p class="portfolio-cat-sub">Neoclassical art museum sessions, city skyline walks, and surprise coastal proposals.</p>
-            <span class="portfolio-cat-cta">View the gallery →</span>
-          </div>
-        </a>
-        </div>
-      </div>
-    </section>
+    <!-- Two panels, one per gallery. No copy: the photographs carry the page. -->
+    <div class="portfolio-split">
+      <a class="album-card" href="weddings/" style="--focus: 50% 40%">
+        <img src="../images/gallery/gallery_002.jpg" width="1280" height="1920" alt="Bride and groom in white embracing in a garden — wedding photography by Thyzfoto" fetchpriority="high">
+        <span class="album-card-name">Wedding</span>
+      </a>
+      <a class="album-card" href="engagements/" style="--focus: 50% 24%">
+        <img src="../images/our_proposal/cover.jpg" width="1600" height="2400" alt="Newly engaged couple laughing together — engagement photography by Thyzfoto" fetchpriority="high">
+        <span class="album-card-name">Engagement</span>
+      </a>
+    </div>
   </main>
 
   <section class="inquire-strip">
@@ -172,10 +152,6 @@
             <a href="../portfolio/engagements/">Engagement →</a>
             <a href="../journal/">Journal →</a>
           </div>
-        </div>
-        <div>
-          <div class="footer-col-eyebrow">PRACTICE</div>
-          <div class="footer-list"><a href="../about/">About →</a><a href="../investment/">Investment →</a></div>
         </div>
         <div>
           <div class="footer-col-eyebrow">ELSEWHERE</div>

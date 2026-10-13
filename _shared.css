@@ -838,12 +838,32 @@ image-slot { display: block; }
 }
 
 .thanks-hero {
+  position: relative; overflow: hidden; isolation: isolate;
   background: var(--ink); color: var(--cream);
-  min-height: 92vh;
+  min-height: 100vh; min-height: 100svh;
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
   padding: 120px 48px 96px;
   text-align: center; margin-top: -73px;
+}
+/* a photograph fills the screen behind the message, under a warm dark veil */
+.thanks-hero-photo {
+  position: absolute; inset: 0; z-index: -2;
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 58%;
+}
+.thanks-hero::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 75% 65% at 50% 50%, rgba(20, 13, 8, 0.66) 0%, rgba(20, 13, 8, 0.80) 100%),
+    linear-gradient(180deg, rgba(20, 13, 8, 0.45) 0%, rgba(20, 13, 8, 0) 26%);
+}
+.thanks-hero-inner { display: flex; flex-direction: column; align-items: center; }
+.thanks-hero h1 { text-shadow: 0 2px 26px rgba(0, 0, 0, 0.45); }
+@media (max-width: 640px) {
+  .thanks-hero { padding: 110px 24px 72px; }
+  .thanks-hero .actions { width: 100%; flex-direction: column; }
+  .thanks-hero .actions .btn { width: 100%; justify-content: center; }
 }
 .thanks-hero h1 {
   font-family: var(--font-display); font-style: italic; font-weight: 400;
@@ -852,8 +872,8 @@ image-slot { display: block; }
   max-width: 1100px; margin: 0;
 }
 .thanks-hero .lede {
-  margin-top: 48px; max-width: 560px;
-  color: rgba(241,234,220,0.78);
+  margin-top: 36px; max-width: 560px;
+  color: rgba(241,234,220,0.88);
 }
 .thanks-hero .actions {
   margin-top: 56px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
@@ -879,7 +899,7 @@ image-slot { display: block; }
 }
 .footer-signoff .ac { color: var(--carmine); }
 .footer-cols {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
   gap: 48px; padding-top: 48px;
 }
 .footer-col-eyebrow {
@@ -1037,111 +1057,90 @@ image-slot { display: block; }
 }
 
 /* ==========================================================================
-   Portfolio — category cards, gallery pages, link tiles
+   Portfolio — image first, almost no text. Modelled on the client's reference
+   (reemphotography.com): tiles that sit edge to edge with the name centred and a
+   soft veil that lifts on hover; galleries are a square-cornered masonry with thin
+   gaps; everything fades in as it scrolls into view.
+     /portfolio/                 two full-height panels (Wedding, Engagement)
+     /portfolio/<category>/      one hero photograph with the single heading, then album tiles
+     /portfolio/<category>/<a>/  the photographs only, then previous / next and a contact form
    ========================================================================== */
-.portfolio-intro { padding: 64px 0 0; }
-.portfolio-intro .lede { margin-top: 28px; }
 
-/* Two category cards. Each shows its cover photograph at the photo's own ratio. */
-.portfolio-cats {
+/* ---- Tiles (album covers) and the two portfolio panels ---- */
+.album-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  max-width: 1040px;
-  margin: 0 auto;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
 }
-.portfolio-cat {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 8px;
-  background: var(--ink);
-  color: var(--cream);
-  box-shadow: 0 10px 30px rgba(44, 31, 24, 0.16);
+.album-card {
+  display: block; position: relative; overflow: hidden;
+  background: var(--ink); color: #F7EFE0;
+  -webkit-tap-highlight-color: transparent;
 }
-.portfolio-cat img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 1.1s var(--ease-cinematic);
-}
-.portfolio-cat::after {
-  content: '';
+/* Every tile is the same 2:3 portrait so the covers line up. Covers that are not exactly
+   2:3 are trimmed slightly at the sides; inside a gallery each photo is shown whole. */
+.album-card::before { content: ''; display: block; padding-top: 150%; }
+.album-card img {
   position: absolute; inset: 0;
-  /* scrim only where the caption sits, so faces higher in the frame stay clean */
-  background: linear-gradient(to top, rgba(20, 13, 8, 0.86) 0%, rgba(20, 13, 8, 0.55) 26%, rgba(20, 13, 8, 0) 62%);
-  opacity: 0.92;
-  transition: opacity 0.5s ease;
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: var(--focus, 50% 50%);
+  transition: transform 1.4s var(--ease-cinematic);
+}
+/* the veil keeps the name readable at rest and lifts away on hover */
+.album-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(24, 13, 8, 0.30);
+  transition: opacity 0.6s ease;
   pointer-events: none;
 }
-.portfolio-cat-body {
+.album-card-name {
   position: absolute; inset: 0; z-index: 2;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: flex-end;
-  text-align: center;
-  padding: 32px 28px 44px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px; text-align: center;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(18px, 2.1vw, 27px); font-weight: 400; line-height: 1.3;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #F7EFE0;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.55);
 }
-.portfolio-cat-title {
-  /* same face and size as the original portfolio's section headings */
-  font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400;
-  font-size: clamp(28px, 4vw, 42px); line-height: 1.15; letter-spacing: 0.04em;
-  color: var(--cream);
-  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
-  margin: 0;
+@media (hover: hover) {
+  .album-card:hover img { transform: scale(1.03); }
+  .album-card:hover::after { opacity: 0.25; }
 }
-.portfolio-cat-sub {
-  /* same face and size as the original portfolio's section descriptions */
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 19px; line-height: 1.4;
-  color: rgba(241, 234, 220, 0.94);
-  max-width: 360px; margin: 10px auto 0;
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
-}
-.portfolio-cat-cta {
-  margin-top: 26px;
-  font-family: var(--font-sans); font-size: 11px; font-weight: 500;
-  letter-spacing: 0.26em; text-transform: uppercase;
-  color: var(--cream);
-  padding-bottom: 5px;
-  border-bottom: 1px solid rgba(241, 234, 220, 0.75);
-  transition: letter-spacing 0.45s var(--ease-cinematic), border-color 0.3s ease;
-}
-.portfolio-cat:hover img,
-.portfolio-cat:focus-visible img { transform: scale(1.04); }
-.portfolio-cat:hover::after,
-.portfolio-cat:focus-visible::after { opacity: 1; }
-.portfolio-cat:hover .portfolio-cat-cta,
-.portfolio-cat:focus-visible .portfolio-cat-cta { letter-spacing: 0.32em; border-bottom-color: var(--cream); }
-.portfolio-cat:focus-visible { outline: 2px solid var(--carmine); outline-offset: 4px; }
+.album-card:focus-visible { outline: 2px solid var(--carmine); outline-offset: -4px; z-index: 3; }
 
-/* Gallery page header */
-.gallery-head { padding: 56px 0 28px; }
-.crumbs {
-  font-family: var(--font-sans); font-size: 11px;
-  letter-spacing: 0.26em; text-transform: uppercase; color: var(--smoke);
+/* Portfolio page: two panels that fill the screen under the bar */
+.portfolio-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
 }
-.crumbs a { border-bottom: 1px solid var(--hairline-2); padding-bottom: 2px; }
-.crumbs a:hover { color: var(--carmine); border-bottom-color: var(--carmine); }
-.crumbs .sep { margin: 0 10px; opacity: 0.6; }
-/* Section heading + description, as on the original portfolio */
-.category-heading {
-  font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
-  font-size: clamp(28px, 4vw, 42px); line-height: 1.15; letter-spacing: 0.04em;
-  color: var(--ink, #1C100A);
-  margin: 8px 0 10px 0;
+.portfolio-split .album-card::before { display: none; }
+.portfolio-split .album-card {
+  height: calc(100vh - var(--nav-h));
+  height: calc(100svh - var(--nav-h));
+  min-height: 420px;
 }
-.category-sub {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 19px;
-  color: rgba(44, 31, 24, 0.72);
-  margin: 0; max-width: 680px;
+.portfolio-split .album-card-name {
+  /* sits in the lower third so it does not cross the faces */
+  align-items: flex-end; padding-bottom: clamp(40px, 11vh, 110px);
+  font-size: clamp(22px, 2.6vw, 34px); letter-spacing: 0.18em;
 }
-.gallery-head .category-heading { margin-top: 20px; }
-.gallery-wrap { padding: 0 0 96px; }
+.portfolio-split .album-card::after {
+  background: linear-gradient(180deg, rgba(24, 13, 8, 0.16) 0%, rgba(24, 13, 8, 0.16) 45%, rgba(24, 13, 8, 0.52) 100%);
+}
+@media (min-width: 861px) {
+  /* the desktop bar is 20px taller than its spacer */
+  .portfolio-split { margin-top: 20px; }
+  .portfolio-split .album-card { height: calc(100vh - var(--nav-h) - 20px); height: calc(100svh - var(--nav-h) - 20px); }
+}
+@media (max-width: 700px) {
+  .album-grid { grid-template-columns: 1fr; }
+  .album-card-name { font-size: 22px; }
+  .portfolio-split { grid-template-columns: 1fr; }
+  .portfolio-split .album-card { height: 60vh; height: 60svh; min-height: 360px; }
+  .portfolio-split .album-card-name { font-size: 24px; }
+}
 
-/* Gallery hero — one large photograph under the bar, with the page title on it.
-   --hero-focus says which part of the photo to keep when the banner crops it. */
+/* ---- Category hero: one large photograph and the single heading ---- */
 .gallery-hero {
   position: relative; overflow: hidden;
   display: flex; align-items: center;
@@ -1153,141 +1152,96 @@ image-slot { display: block; }
   display: block; width: 100%; height: 100%;
   object-fit: cover; object-position: var(--hero-focus, 50% 50%);
 }
-/* veil, heavier on the left where the title sits */
 .gallery-hero::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(20, 13, 8, 0.62) 0%, rgba(20, 13, 8, 0.30) 46%, rgba(20, 13, 8, 0.12) 100%);
+  background: linear-gradient(90deg, rgba(20, 13, 8, 0.58) 0%, rgba(20, 13, 8, 0.26) 46%, rgba(20, 13, 8, 0.10) 100%);
   pointer-events: none;
 }
 .gallery-hero-inner { position: relative; z-index: 2; width: 100%; }
-.gallery-hero .crumbs { color: rgba(241, 234, 220, 0.86); }
-.gallery-hero .crumbs a { border-bottom-color: rgba(241, 234, 220, 0.5); }
-.gallery-hero .crumbs a:hover { color: #fff; border-bottom-color: #fff; }
-.gallery-hero .category-heading {
+.gallery-hero-title {
+  font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400;
+  font-size: clamp(40px, 5.2vw, 68px); line-height: 1.1; letter-spacing: 0.04em;
   color: var(--cream);
-  margin: 18px 0 10px;
   text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+  margin: 0;
 }
-.gallery-hero .category-sub {
-  color: rgba(241, 234, 220, 0.92);
-  max-width: 460px;
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
-}
-.gallery-hero + .gallery-wrap { padding-top: 56px; }
+.gallery-wrap { padding: 56px 0 96px; }
+.gallery-wrap.is-bare { padding-top: 40px; }
 @media (min-width: 861px) {
-  /* the desktop bar is 20px taller than its spacer; start the photo below it */
   .gallery-hero { margin-top: 20px; }
+  .gallery-wrap.is-bare { padding-top: 60px; }
 }
 @media (max-width: 860px) {
-  .gallery-hero { height: clamp(320px, 64vh, 560px); }
+  .gallery-hero { height: clamp(320px, 64vh, 560px); align-items: flex-end; }
   .gallery-hero::after {
-    background: linear-gradient(180deg, rgba(20, 13, 8, 0.30) 0%, rgba(20, 13, 8, 0.18) 40%, rgba(20, 13, 8, 0.62) 100%);
+    background: linear-gradient(180deg, rgba(20, 13, 8, 0.26) 0%, rgba(20, 13, 8, 0.16) 40%, rgba(20, 13, 8, 0.60) 100%);
   }
-  .gallery-hero { align-items: flex-end; }
   .gallery-hero-inner { padding-bottom: 32px; }
-  .gallery-hero + .gallery-wrap { padding-top: 32px; }
-}
-
-/* Closing link tiles under a gallery */
-.link-tiles {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px; margin-top: 72px;
-}
-.link-tile {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; gap: 12px;
-  padding: 44px 20px;
-  border: 1px solid var(--hairline-2);
-  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-}
-.link-tile .t {
-  font-family: var(--font-display); font-style: italic; font-weight: 400;
-  font-size: clamp(24px, 2.6vw, 32px); line-height: 1.1; color: var(--ink);
-  transition: color 0.35s ease;
-}
-.link-tile .s {
-  font-family: var(--font-sans); font-size: 10.5px;
-  letter-spacing: 0.26em; text-transform: uppercase; color: var(--smoke);
-  transition: color 0.35s ease;
-}
-.link-tile:hover, .link-tile:focus-visible { background: var(--ink); border-color: var(--ink); }
-.link-tile:hover .t, .link-tile:focus-visible .t { color: var(--cream); }
-.link-tile:hover .s, .link-tile:focus-visible .s { color: rgba(241, 234, 220, 0.7); }
-
-@media (max-width: 860px) {
-  .portfolio-intro { padding-top: 44px; }
-  .portfolio-cats { gap: 16px; }
-  .portfolio-cat-body { padding: 20px 16px 28px; }
-  .portfolio-cat-cta { margin-top: 18px; font-size: 10px; }
-  .gallery-head { padding: 40px 0 28px; }
-  .gallery-wrap { padding-bottom: 72px; }
-  .link-tiles { margin-top: 48px; gap: 12px; }
-  .link-tile { padding: 32px 14px; }
+  .gallery-wrap { padding: 32px 0 72px; }
+  .gallery-wrap.is-bare { padding-top: 24px; }
 }
 @media (max-width: 640px) {
-  /* Phones: give the photographs the width — tighter gutters on portfolio pages only */
+  /* phones: give the photographs the width */
   .portfolio-page .container { padding: 0 20px; }
-  .portfolio-cats { grid-template-columns: 1fr; gap: 16px; }
-  .portfolio-cat-body { padding: 28px 24px 34px; }
-  .link-tiles { grid-template-columns: 1fr; }
-  .link-tile { padding: 28px 16px; }
 }
 
-/* ==========================================================================
-   Albums — an index of tiles (cover + the names centred on it); each tile opens
-   that album's own page: the names, then every photograph at its own proportions.
-   ========================================================================== */
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;               /* tiles sit edge to edge, as one band of covers */
+/* ---- Gallery: the photographs only ----
+   Plain CSS columns are the baseline. The script then deals the photographs into --cols
+   real columns, always adding to the shortest one, so the columns end level and the
+   photographs read left to right the way the reference's galleries do. */
+.portfolio-page .masonry { --cols: 4; --gap: 12px; column-count: 4; column-gap: var(--gap); }
+.portfolio-page .masonry-item {
+  margin-bottom: var(--gap);
+  border-radius: 0; box-shadow: none;
+  background: var(--parchment);
 }
-.album-card {
-  display: block; position: relative; overflow: hidden;
-  background: var(--ink); color: #F7EFE0;
-  -webkit-tap-highlight-color: transparent;
+.portfolio-page .masonry.is-dealt { column-count: auto; display: flex; align-items: flex-start; gap: var(--gap); }
+.portfolio-page .masonry.is-dealt .masonry-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: var(--gap); }
+.portfolio-page .masonry.is-dealt .masonry-item { margin-bottom: 0; }
+@media (max-width: 1100px) { .portfolio-page .masonry { --cols: 3; column-count: 3; } }
+@media (max-width: 700px) { .portfolio-page .masonry { --cols: 2; --gap: 8px; column-count: 2; } }
+
+/* previous / next album: arrows only */
+.gallery-pager {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 56px;
 }
-/* Every tile is the same 2:3 portrait so the covers line up. Covers that are not exactly
-   2:3 are trimmed slightly at the sides; on the album page each photo is shown whole. */
-.album-card::before { content: ''; display: block; padding-top: 150%; }
-.album-card img {
-  position: absolute; inset: 0;
-  display: block; width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 1.1s var(--ease-cinematic);
-}
-/* soft veil so the names read on any photograph */
-.album-card::after {
-  content: ''; position: absolute; inset: 0;
-  background: rgba(24, 13, 8, 0.26);
-  transition: background 0.45s ease;
-  pointer-events: none;
-}
-.album-card-name {
-  position: absolute; inset: 0; z-index: 2;
+.gallery-pager a {
+  width: 56px; height: 56px;
   display: flex; align-items: center; justify-content: center;
-  padding: 24px; text-align: center;
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(18px, 2.1vw, 27px); font-weight: 400; line-height: 1.3;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: #F7EFE0;
-  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.5);
+  color: var(--ink);
+  transition: transform 0.45s var(--ease-cinematic), color 0.3s ease;
 }
-.album-card:hover img,
-.album-card:focus-visible img { transform: scale(1.05); }
-.album-card:hover::after,
-.album-card:focus-visible::after { background: rgba(24, 13, 8, 0.4); }
-.album-card:focus-visible { outline: 2px solid var(--carmine); outline-offset: 4px; z-index: 3; }
+.gallery-pager svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+.gallery-pager a:hover, .gallery-pager a:focus-visible { color: var(--carmine); outline: none; }
+.gallery-pager a.prev:hover, .gallery-pager a.prev:focus-visible { transform: translateX(-5px); }
+.gallery-pager a.next:hover, .gallery-pager a.next:focus-visible { transform: translateX(5px); }
+
+/* contact form at the end of a gallery */
+.gallery-contact { background: var(--parchment); padding: 88px 0 96px; }
+.gallery-contact .eyebrow-row { margin-bottom: 40px; }
+.gallery-contact .form-foot { justify-content: flex-end; margin-top: 8px; }
 @media (max-width: 700px) {
-  .album-grid { grid-template-columns: 1fr; }
-  .album-card-name { font-size: 22px; }
+  .gallery-contact { padding: 64px 0 72px; }
+  .gallery-contact .eyebrow-row { margin-bottom: 28px; }
+  .gallery-contact .form-foot { justify-content: stretch; }
+  .gallery-contact .form-foot .btn { width: 100%; justify-content: center; }
 }
 
-/* Album page header: crumbs, the names, the place — centred above the photographs */
-.gallery-head.is-centered { text-align: center; padding-bottom: 40px; }
-.gallery-head.is-centered .category-sub { margin: 0 auto; }
+/* ---- Fade in on scroll. Pages opt in with html.js-anim (set in <head>); without it,
+        or with reduced motion, everything is simply visible. ---- */
+html.js-anim .album-card,
+html.js-anim .portfolio-page .masonry-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1s ease, transform 1.1s var(--ease-cinematic);
+}
+html.js-anim .album-card.is-in,
+html.js-anim .portfolio-page .masonry-item.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  .album-card img, .album-card::after { transition: none; }
+  html.js-anim .album-card,
+  html.js-anim .portfolio-page .masonry-item { opacity: 1; transform: none; transition: none; }
+  .album-card img, .album-card::after, .gallery-pager a { transition: none; }
 }
 
 /* ==========================================================================
@@ -1352,5 +1306,5 @@ image-slot { display: block; }
   .lightbox-next { right: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lightbox, .lightbox-img, .masonry-item img, .portfolio-cat img { transition: none; }
+  .lightbox, .lightbox-img, .masonry-item img { transition: none; }
 }
