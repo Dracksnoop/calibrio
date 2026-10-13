@@ -116,21 +116,49 @@
         <span class="album-card-name">Engagement</span>
       </a>
     </div>
-  </main>
 
-  <section class="inquire-strip">
-    <div class="inner">
-      <div style="flex: 1 1 360px">
-        <div class="eyebrow-row" style="margin-bottom:14px">
+    <section class="gallery-contact" aria-label="Write to me">
+      <div class="container narrow">
+        <div class="eyebrow-row">
           <span class="dot"></span>
-          <span class="eyebrow lbl">STILL READING?</span>
+          <span class="eyebrow lbl">WRITE TO ME</span>
         </div>
-        <h2><em>Tell me about your day.</em></h2>
-        <p class="lede" style="margin-top:14px">Coverage starts at $3,500. I usually reply within two days.</p>
+        <form class="inquire-form" method="POST" action="../send-inquiry.php" novalidate>
+          <input type="hidden" name="_subject" value="New wedding inquiry — Thyzfoto">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="gcName">FULL NAME <span class="req">*</span></label>
+              <input id="gcName" name="fullName" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="gcEmail">EMAIL <span class="req">*</span></label>
+              <input id="gcEmail" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="gcPhone">PHONE NUMBER <span class="req">*</span></label>
+              <input id="gcPhone" name="phone" type="tel" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="gcDate">WEDDING DATE</label>
+              <input id="gcDate" name="weddingDate" type="text">
+            </div>
+            <div class="field full">
+              <label for="gcDetails">TELL ME EVERYTHING <span class="req">*</span></label>
+              <textarea id="gcDetails" name="details" rows="4" required></textarea>
+            </div>
+
+            <div class="form-foot">
+              <button type="submit" class="btn btn-primary" disabled style="opacity:0.6;cursor:not-allowed;background:var(--smoke)">
+                Send my note <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-      <a href="../investment/" class="btn btn-primary">Inquire now <span class="arrow">→</span></a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="footer-inner">
