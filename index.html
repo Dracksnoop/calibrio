@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-  <link rel="stylesheet" href="_shared.css?v=hostinger_v111">
+  <link rel="stylesheet" href="_shared.css?v=hostinger_v112">
   <script>document.documentElement.classList.add('js-anim');</script>
 
   <style>
@@ -2995,7 +2995,7 @@
                 <div class="letter-contact-form-wrapper" id="letterContactFormWrapper"
                   style="display: none; opacity: 0; transition: opacity 0.4s ease; margin-top: 20px; text-align: left;">
                   <form id="approachLetterForm" class="inquire-form approach-form"
-                    action="https://formspree.io/f/thyzfoto@gmail.com" method="POST">
+                    action="send-inquiry.php" method="POST">
                     <input type="hidden" name="_to" value="thyzfoto@gmail.com">
                     <input type="hidden" name="_subject" value="New Letter Inquiry — Thyzfoto">
 
@@ -3063,9 +3063,9 @@
                   <div id="approachFormSuccess"
                     style="display: none; padding: 20px; text-align: center; background: rgba(245,236,218,0.95); border: 1px solid #8c7355; border-radius: 6px; margin-top: 16px;">
                     <h4 style="font-family: var(--font-serif); font-size: 20px; color: #2a2826; margin-bottom: 6px;">
-                      <em>Your letter has been sent.</em>
+                      <em id="approachFormSuccessTitle">Your letter has been sent.</em>
                     </h4>
-                    <p style="font-size: 14px; color: #2a2826; line-height: 1.5; margin: 0;">Thank you for writing. Your
+                    <p id="approachFormSuccessText" style="font-size: 14px; color: #2a2826; line-height: 1.5; margin: 0;">Thank you for writing. Your
                       message has been sent to <strong>thyzfoto@gmail.com</strong>. Uriel will read it personally and
                       reply soon.</p>
                   </div>
@@ -3521,7 +3521,7 @@
     </div>
   </footer>
 
-  <script src="_shared.js?v=hostinger_v111" defer></script>
+  <script src="_shared.js?v=hostinger_v112" defer></script>
 
 
   <!-- Pinned 3D Letter Scroller: Approaching on Scroll, 100% Reversible on Scroll Up -->
@@ -4096,8 +4096,10 @@
         }
 
         if (form) {
+          let sending = false;
           form.addEventListener('submit', function (e) {
             e.preventDefault();
+            if (sending) return;
             const name = form.querySelector('[name="fullName"]')?.value || '';
             const phone = form.querySelector('[name="phone"]')?.value || '';
             const email = form.querySelector('[name="email"]')?.value || '';
@@ -4113,14 +4115,40 @@
             );
             const mailtoUrl = `mailto:thyzfoto@gmail.com?subject=${subject}&body=${bodyText}`;
 
-            if (successBox) {
-              form.style.display = 'none';
-              successBox.style.display = 'block';
-            }
+            // Show the panel, worded for what actually happened: sent by the site, or handed
+            // to the visitor's own email app because this host could not send it.
+            const finish = function (sent) {
+              if (successBox) {
+                if (!sent) {
+                  const title = document.getElementById('approachFormSuccessTitle');
+                  const text = document.getElementById('approachFormSuccessText');
+                  const open = document.createElement('a');
+                  open.href = mailtoUrl;
+                  open.textContent = 'open it here';
+                  open.style.textDecoration = 'underline';
+                  if (title) title.textContent = 'One more step.';
+                  if (text) {
+                    text.textContent = '';
+                    text.append('Your letter is waiting in your email app, addressed to thyzfoto@gmail.com. ' +
+                      'Press send there and it will reach Uriel. If no email app opened, ', open, '.');
+                  }
+                }
+                form.style.display = 'none';
+                successBox.style.display = 'block';
+              }
+              if (!sent) {
+                setTimeout(() => {
+                  window.location.href = mailtoUrl;
+                }, 300);
+              }
+            };
 
-            setTimeout(() => {
-              window.location.href = mailtoUrl;
-            }, 300);
+            if (!window.ThyzInquiry) { finish(false); return; }
+
+            sending = true;
+            const sendBtn = document.getElementById('appSubmitBtn');
+            if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; }
+            window.ThyzInquiry.send(form).then(function (result) { finish(result.sent); });
           });
         }
       })();

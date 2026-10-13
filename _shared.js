@@ -83,6 +83,55 @@
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
   }
 
+  // ==========================================================================
+  // Sending an inquiry — shared by the Investment form and the homepage letter form.
+  // The note is posted in the background to the site's mail script. Where that script
+  // cannot run (a static host or preview), the note is handed to the visitor's own
+  // email app instead, so nobody is ever left on an error page.
+  // ==========================================================================
+  const INQUIRY_EMAIL = 'thyzfoto@gmail.com';
+
+  // The same answers as an email draft: one "Label: answer" line per field, then the message.
+  function inquiryMailto(form) {
+    const value = (name) => { const el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; };
+    const rows = [];
+    let details = '';
+    form.querySelectorAll('.field').forEach((field) => {
+      const control = field.querySelector('input[name]:not([name^="_"]), textarea[name]');
+      if (!control || !control.value.trim()) return;
+      if (control.name === 'details') { details = control.value.trim(); return; }
+      const labelEl = field.querySelector('label, .field-label');
+      let label = labelEl ? labelEl.textContent.replace(/\*/g, '').replace(/\s+/g, ' ').trim() : control.name;
+      label = (label.charAt(0).toUpperCase() + label.slice(1).toLowerCase()).replace(/[?:]$/, '');
+      rows.push(label + ': ' + control.value.trim());
+    });
+    const name = value('fullName');
+    const subject = (value('_subject') || 'New wedding inquiry — Thyzfoto') + (name ? ' — ' + name : '');
+    const body = 'Dear Uriel,\n\n' + rows.join('\n') + (details ? '\n\n' + details : '') + '\n';
+    return 'mailto:' + (form.dataset.mailto || INQUIRY_EMAIL) +
+      '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  // Resolves { sent: true, next } when the mail script took the note (it answers by
+  // redirecting to the thank-you page), otherwise { sent: false, mailto }.
+  function sendInquiry(form) {
+    const endpoint = form.getAttribute('action');
+    const ctl = 'AbortController' in window ? new AbortController() : null;
+    const timer = ctl ? setTimeout(() => ctl.abort(), 20000) : null;
+    const post = endpoint
+      ? fetch(endpoint, { method: 'POST', body: new URLSearchParams(new FormData(form)), signal: ctl ? ctl.signal : undefined })
+      : Promise.reject(new Error('no endpoint'));
+    return post
+      .then((res) => {
+        if (res.ok && /\/thank-you\/?(\?|#|$)/.test(res.url)) return { sent: true, next: res.url };
+        throw new Error('not sent');
+      })
+      .catch(() => ({ sent: false, mailto: inquiryMailto(form) }))
+      .then((result) => { if (timer) clearTimeout(timer); return result; });
+  }
+
+  window.ThyzInquiry = { send: sendInquiry, email: INQUIRY_EMAIL };
+
   const form = document.querySelector('form.inquire-form');
   if (form) {
     const submit = form.querySelector('[type="submit"]');
@@ -130,6 +179,51 @@
     fields.forEach((f) => f.addEventListener('blur', () => { f.dataset.touched = 'true'; validate(); }));
 
     validate();
+
+    // The Investment form sends in the background. (The homepage letter form shares the
+    // validation above but has its own submit handler and success panel.)
+    if (!form.classList.contains('approach-form')) {
+      const status = document.createElement('p');
+      status.className = 'form-status';
+      status.setAttribute('role', 'status');
+      status.hidden = true;
+      const foot = form.querySelector('.form-foot');
+      if (foot) foot.insertAdjacentElement('afterend', status); else form.appendChild(status);
+
+      let sending = false;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (sending) return;
+        fields.forEach((f) => { f.dataset.touched = 'true'; });
+        if (!validate()) return;
+
+        sending = true;
+        status.hidden = true;
+        const label = submit ? submit.innerHTML : '';
+        if (submit) { submit.disabled = true; submit.style.cursor = 'progress'; submit.textContent = 'Sending…'; }
+
+        sendInquiry(form).then((result) => {
+          if (result.sent) { window.location.href = result.next; return; }
+
+          // This host could not send it: hand the note to the visitor's email app and say so.
+          sending = false;
+          if (submit) submit.innerHTML = label;
+          validate();
+          const open = document.createElement('a');
+          open.href = result.mailto;
+          open.textContent = 'open it here';
+          const address = document.createElement('a');
+          address.href = 'mailto:' + INQUIRY_EMAIL;
+          address.textContent = INQUIRY_EMAIL;
+          status.textContent = '';
+          status.append(
+            'This page couldn’t send your note directly, so it is waiting in your email app, ready to go. ' +
+            'Press send there and it will reach me. If no email app opened, ', open, ' or write to ', address, '.');
+          status.hidden = false;
+          window.location.href = result.mailto;
+        });
+      });
+    }
   }
 
   const yr = document.querySelectorAll('[data-year]');
