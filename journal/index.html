@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-  <link rel="stylesheet" href="../_shared.css?v=hostinger_v113">
+  <link rel="stylesheet" href="../_shared.css?v=hostinger_v116">
 
   <script type="application/ld+json">
   {
@@ -86,7 +86,7 @@
     <div class="container">
       <div class="eyebrow-row" style="margin-bottom:28px">
         <span class="dot"></span>
-        <span class="eyebrow lbl">THE JOURNAL · ESSAYS &amp; FIELD NOTES</span>
+        <span class="eyebrow lbl">THE JOURNAL</span>
       </div>
       <h1 class="page-title"><em>Letters from<br>between the days.</em></h1>
       <p class="lede" style="margin-top:28px">
@@ -149,14 +149,45 @@
     </div>
   </section>
 
-  <section class="inquire-strip">
-    <div class="inner">
-      <div style="flex: 1 1 360px">
-        <div class="eyebrow-row" style="margin-bottom:14px"><span class="dot"></span><span class="eyebrow lbl">STILL READING?</span></div>
-        <h2><em>Tell me about your day.</em></h2>
-        <p class="lede" style="margin-top:14px">Coverage starts at $3,500. I usually reply within two days.</p>
+  <section class="gallery-contact" aria-label="Write to me">
+    <div class="container narrow">
+      <div class="eyebrow-row">
+        <span class="dot"></span>
+        <span class="eyebrow lbl">WRITE TO ME</span>
       </div>
-      <a href="../investment/" class="btn btn-primary">Inquire now <span class="arrow">→</span></a>
+      <form class="inquire-form" method="POST" action="../send-inquiry.php" novalidate>
+        <input type="hidden" name="_subject" value="New wedding inquiry — Thyzfoto">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="gcName">FULL NAME <span class="req">*</span></label>
+            <input id="gcName" name="fullName" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="gcEmail">EMAIL <span class="req">*</span></label>
+            <input id="gcEmail" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="gcPhone">PHONE NUMBER <span class="req">*</span></label>
+            <input id="gcPhone" name="phone" type="tel" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="gcDate">WEDDING DATE</label>
+            <input id="gcDate" name="weddingDate" type="text">
+          </div>
+          <div class="field full">
+            <label for="gcDetails">TELL ME EVERYTHING <span class="req">*</span></label>
+            <textarea id="gcDetails" name="details" rows="4" required></textarea>
+          </div>
+
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary" disabled style="opacity:0.6;cursor:not-allowed;background:var(--smoke)">
+              Send my note <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -194,6 +225,6 @@
     </div>
   </footer>
 
-  <script src="../_shared.js?v=hostinger_v113" defer></script>
+  <script src="../_shared.js?v=hostinger_v116" defer></script>
 </body>
 </html>
