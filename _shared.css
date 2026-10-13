@@ -1017,30 +1017,6 @@ image-slot { display: block; }
   transform: translateY(-3px);
 }
 
-/* ==========================================================================
-   Chatway Live Chat Widget Hover Effect
-   ========================================================================== */
-.chatway-launcher,
-.chatway--trigger-container,
-.chatway--trigger-icon-container,
-#chatway_widget_trigger,
-div[class*="chatway--trigger"],
-div[class*="chatway-launcher"],
-div[id*="chatway"]:not([style*="height: 100%"]):not([class*="expanded"]) {
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), filter 0.28s ease, box-shadow 0.28s ease !important;
-}
-
-.chatway-launcher:hover,
-.chatway--trigger-container:hover,
-.chatway--trigger-icon-container:hover,
-#chatway_widget_trigger:hover,
-div[class*="chatway--trigger"]:hover,
-div[class*="chatway-launcher"]:hover,
-div[id*="chatway"]:not([style*="height: 100%"]):not([class*="expanded"]):hover {
-  transform: translateY(-4px) scale(1.06) !important;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45)) !important;
-}
-
 @media (max-width: 768px) {
   .scroll-to-top-btn {
     bottom: 20px;
