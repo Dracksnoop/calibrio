@@ -106,28 +106,23 @@ p { margin: 0; }
   z-index: 1;
 }
 .btn-primary::after {
+  /* hover light sweep, kept inside the button's box (see index.html .btn::before) */
   content: '';
   position: absolute;
-  top: 0;
-  left: -130%;
-  width: 65%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.08) 18%,
-    rgba(255, 255, 255, 0.52) 50%,
-    rgba(255, 255, 255, 0.08) 82%,
-    transparent 100%
-  );
-  transform: skewX(-24deg);
+  inset: 0;
+  background-image: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.10) 43%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0.10) 57%, transparent 65%);
+  background-size: 250% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  opacity: 0;
   pointer-events: none;
   z-index: 2;
-  transition: none;
+  transition: background-position 0s 0.2s, opacity 0.2s ease;
 }
 .btn-primary:hover::after {
-  left: 180%;
-  transition: left 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 1;
+  background-position: 0% 0;
+  transition: background-position 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0s;
 }
 .btn-primary:hover { background: var(--wine); }
 .btn-primary:active { transform: scale(0.98); }
@@ -1064,6 +1059,40 @@ image-slot { display: block; }
     width: 44px;
     height: 44px;
   }
+}
+
+/* ==========================================================================
+   Inquiry page — a photograph fills the left half and stays put while the
+   heading and form scroll on the right. Phones: the photo becomes a banner on top.
+   ========================================================================== */
+.inquire-split { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+.inquire-photo {
+  /* pinned to the very top: the bar hides as you scroll down, and slides back over the photo */
+  position: sticky; top: 0;
+  height: 100vh; height: 100svh;
+  margin: 0; overflow: hidden; background: var(--ink);
+}
+.inquire-photo img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 30%;
+}
+.inquire-panel { padding: 88px clamp(28px, 5vw, 88px) 112px; }
+.inquire-panel-inner { max-width: 600px; }
+.inquire-panel .page-title { font-size: clamp(40px, 4.4vw, 68px); line-height: 1.06; }
+.inquire-panel .lede { max-width: 540px; }
+.inquire-rule { height: 1px; background: var(--hairline-2); margin: 48px 0 44px; }
+.inquire-panel .form-grid { gap: 26px 28px; }
+.inquire-panel .form-foot { flex-direction: column; align-items: stretch; gap: 20px; }
+.inquire-panel .form-foot .btn { justify-content: center; }
+@media (min-width: 861px) {
+  /* the desktop bar is 20px taller than its spacer */
+  .inquire-split { margin-top: 20px; }
+}
+@media (max-width: 860px) {
+  .inquire-split { grid-template-columns: 1fr; }
+  .inquire-photo { position: relative; top: auto; height: 56vh; height: 56svh; min-height: 320px; }
+  .inquire-panel { padding: 48px 24px 80px; }
+  .inquire-panel-inner { max-width: none; }
 }
 
 /* ==========================================================================
