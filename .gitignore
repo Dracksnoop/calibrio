@@ -3,3 +3,6 @@
 
 # Old deploy bundle (a zipped copy of the site; too large for GitHub and not kept in sync)
 *.zip
+
+# Dependencies for the Vercel function (installed by Vercel on deploy)
+node_modules/

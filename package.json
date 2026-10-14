@@ -1,0 +1,11 @@
+{
+  "name": "thyzfoto-site",
+  "private": true,
+  "description": "Static site. The only server code is api/inquiry.js (a Vercel function that emails form inquiries).",
+  "dependencies": {
+    "nodemailer": "6.10.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

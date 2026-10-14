@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-  <link rel="stylesheet" href="_shared.css?v=hostinger_v117">
+  <link rel="stylesheet" href="_shared.css?v=hostinger_v119">
   <script>document.documentElement.classList.add('js-anim');</script>
 
   <style>
@@ -3542,7 +3542,7 @@
     </div>
   </footer>
 
-  <script src="_shared.js?v=hostinger_v117" defer></script>
+  <script src="_shared.js?v=hostinger_v119" defer></script>
 
 
   <!-- Pinned 3D Letter Scroller: Approaching on Scroll, 100% Reversible on Scroll Up -->
@@ -4125,51 +4125,38 @@
             const phone = form.querySelector('[name="phone"]')?.value || '';
             const email = form.querySelector('[name="email"]')?.value || '';
             const details = form.querySelector('[name="details"]')?.value || '';
-            const date = form.querySelector('[name="weddingDate"]')?.value || '';
-            const loc = form.querySelector('[name="weddingLocation"]')?.value || '';
 
             if (!name || !phone || !email || !details) return;
 
-            const subject = encodeURIComponent('New Letter Inquiry — ' + name);
-            const bodyText = encodeURIComponent(
-              `Dear Uriel,\n\nName(s): ${name}\nPhone: ${phone}\nEmail: ${email}\nWedding Date/Season: ${date}\nLocation/Venue: ${loc}\n\nDetails:\n${details}\n\n---\nSent via Thyzfoto Letter Form`
-            );
-            const mailtoUrl = `mailto:thyzfoto@gmail.com?subject=${subject}&body=${bodyText}`;
+            const sendBtn = document.getElementById('appSubmitBtn');
+            const sendLabel = sendBtn ? sendBtn.innerHTML : '';
 
-            // Show the panel, worded for what actually happened: sent by the site, or handed
-            // to the visitor's own email app because this host could not send it.
-            const finish = function (sent) {
-              if (successBox) {
-                if (!sent) {
-                  const title = document.getElementById('approachFormSuccessTitle');
-                  const text = document.getElementById('approachFormSuccessText');
-                  const open = document.createElement('a');
-                  open.href = mailtoUrl;
-                  open.textContent = 'open it here';
-                  open.style.textDecoration = 'underline';
-                  if (title) title.textContent = 'One more step.';
-                  if (text) {
-                    text.textContent = '';
-                    text.append('Your letter is waiting in your email app, addressed to thyzfoto@gmail.com. ' +
-                      'Press send there and it will reach Uriel. If no email app opened, ', open, '.');
-                  }
-                }
-                form.style.display = 'none';
-                successBox.style.display = 'block';
+            // Delivered: go to the thank-you page. Not delivered: keep the letter and say so.
+            const finish = function (result) {
+              if (result && result.sent) { window.location.href = result.next; return; }
+              sending = false;
+              if (sendBtn) { sendBtn.disabled = false; sendBtn.innerHTML = sendLabel; }
+              let note = document.getElementById('approachFormError');
+              if (!note) {
+                note = document.createElement('p');
+                note.id = 'approachFormError';
+                note.setAttribute('role', 'status');
+                note.style.cssText = 'margin: 14px 0 0; font-size: 13px; line-height: 1.5; color: #5C2A1A; text-align: center;';
+                form.appendChild(note);
               }
-              if (!sent) {
-                setTimeout(() => {
-                  window.location.href = mailtoUrl;
-                }, 300);
-              }
+              const address = document.createElement('a');
+              address.href = 'mailto:thyzfoto@gmail.com';
+              address.textContent = 'thyzfoto@gmail.com';
+              address.style.textDecoration = 'underline';
+              note.textContent = '';
+              note.append('Your letter couldn’t be sent just now. Please try again in a moment, or write to ', address, '.');
             };
 
-            if (!window.ThyzInquiry) { finish(false); return; }
+            if (!window.ThyzInquiry) { finish({ sent: false }); return; }
 
             sending = true;
-            const sendBtn = document.getElementById('appSubmitBtn');
             if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; }
-            window.ThyzInquiry.send(form).then(function (result) { finish(result.sent); });
+            window.ThyzInquiry.send(form).then(finish);
           });
         }
       })();

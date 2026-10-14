@@ -84,49 +84,45 @@
   }
 
   // ==========================================================================
-  // Sending an inquiry — shared by the Investment form and the homepage letter form.
-  // The note is posted in the background to the site's mail script. Where that script
-  // cannot run (a static host or preview), the note is handed to the visitor's own
-  // email app instead, so nobody is ever left on an error page.
+  // Sending an inquiry — shared by every form on the site.
+  // The note is posted in the background, straight to the photographer's inbox:
+  //   1. the form's own action (send-inquiry.php — works on the Hostinger host), then
+  //   2. /api/inquiry (the email function — works on Vercel).
+  // Whichever answers first with success sends the visitor to the thank-you page.
+  // If neither can send, the visitor stays on the form with a clear message.
   // ==========================================================================
   const INQUIRY_EMAIL = 'thyzfoto@gmail.com';
+  const THANK_YOU = '/thank-you/';
 
-  // The same answers as an email draft: one "Label: answer" line per field, then the message.
-  function inquiryMailto(form) {
-    const value = (name) => { const el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; };
-    const rows = [];
-    let details = '';
-    form.querySelectorAll('.field').forEach((field) => {
-      const control = field.querySelector('input[name]:not([name^="_"]), textarea[name]');
-      if (!control || !control.value.trim()) return;
-      if (control.name === 'details') { details = control.value.trim(); return; }
-      const labelEl = field.querySelector('label, .field-label');
-      let label = labelEl ? labelEl.textContent.replace(/\*/g, '').replace(/\s+/g, ' ').trim() : control.name;
-      label = (label.charAt(0).toUpperCase() + label.slice(1).toLowerCase()).replace(/[?:]$/, '');
-      rows.push(label + ': ' + control.value.trim());
-    });
-    const name = value('fullName');
-    const subject = (value('_subject') || 'New wedding inquiry — Thyzfoto') + (name ? ' — ' + name : '');
-    const body = 'Dear Uriel,\n\n' + rows.join('\n') + (details ? '\n\n' + details : '') + '\n';
-    return 'mailto:' + (form.dataset.mailto || INQUIRY_EMAIL) +
-      '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  function postTo(url, form, signal) {
+    return fetch(url, { method: 'POST', body: new URLSearchParams(new FormData(form)), signal, headers: { Accept: 'application/json' } });
   }
 
-  // Resolves { sent: true, next } when the mail script took the note (it answers by
-  // redirecting to the thank-you page), otherwise { sent: false, mailto }.
+  // Resolves { sent: true, next } once the note is delivered, otherwise { sent: false }.
   function sendInquiry(form) {
-    const endpoint = form.getAttribute('action');
     const ctl = 'AbortController' in window ? new AbortController() : null;
-    const timer = ctl ? setTimeout(() => ctl.abort(), 20000) : null;
-    const post = endpoint
-      ? fetch(endpoint, { method: 'POST', body: new URLSearchParams(new FormData(form)), signal: ctl ? ctl.signal : undefined })
-      : Promise.reject(new Error('no endpoint'));
-    return post
-      .then((res) => {
+    const signal = ctl ? ctl.signal : undefined;
+    const timer = ctl ? setTimeout(() => ctl.abort(), 25000) : null;
+    const action = form.getAttribute('action');
+
+    // 1. the PHP mail script answers by redirecting to the thank-you page
+    const viaPhp = () => (action
+      ? postTo(action, form, signal).then((res) => {
         if (res.ok && /\/thank-you\/?(\?|#|$)/.test(res.url)) return { sent: true, next: res.url };
-        throw new Error('not sent');
+        throw new Error('php not available');
       })
-      .catch(() => ({ sent: false, mailto: inquiryMailto(form) }))
+      : Promise.reject(new Error('no action')));
+
+    // 2. the email function answers { ok: true }
+    const viaFunction = () => postTo('/api/inquiry', form, signal)
+      .then((res) => res.json().catch(() => ({})).then((data) => {
+        if (res.ok && data && data.ok) return { sent: true, next: THANK_YOU };
+        throw new Error('function: ' + (data && data.error || res.status));
+      }));
+
+    return viaPhp()
+      .catch(() => viaFunction())
+      .catch(() => ({ sent: false }))
       .then((result) => { if (timer) clearTimeout(timer); return result; });
   }
 
@@ -205,22 +201,16 @@
         sendInquiry(form).then((result) => {
           if (result.sent) { window.location.href = result.next; return; }
 
-          // This host could not send it: hand the note to the visitor's email app and say so.
+          // Nothing could be delivered: keep everything they typed and say how to reach me.
           sending = false;
           if (submit) submit.innerHTML = label;
           validate();
-          const open = document.createElement('a');
-          open.href = result.mailto;
-          open.textContent = 'open it here';
           const address = document.createElement('a');
           address.href = 'mailto:' + INQUIRY_EMAIL;
           address.textContent = INQUIRY_EMAIL;
           status.textContent = '';
-          status.append(
-            'This page couldn’t send your note directly, so it is waiting in your email app, ready to go. ' +
-            'Press send there and it will reach me. If no email app opened, ', open, ' or write to ', address, '.');
+          status.append('Your note couldn’t be sent just now. Please try again in a moment, or write to me at ', address, '.');
           status.hidden = false;
-          window.location.href = result.mailto;
         });
       });
     }
